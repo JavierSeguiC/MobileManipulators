@@ -4,7 +4,7 @@ Repository for the course "Mobile Manipulators" created by the Mobile Robots Gro
 ## Installation
 
 > [!CAUTION]  
-> Es necasrio instalar el webots por terminal. Webots 2025 solo esta soportado para Ubuntu 22.04 y 24.04. Si tu versio nes Ubuntu 20.04 debes seguir los siguientes pasos de instalacion para isntalar el Webots 2023b.
+> Es necesario instalar el webots por terminal. Webots 2025 solo esta soportado para Ubuntu 22.04 y 24.04. Si tu versio nes Ubuntu 20.04 debes seguir los siguientes pasos de instalacion para isntalar el Webots 2023b.
 
 ### Installation Webots 2023b
 1) Ir a: [Github Webots](https://github.com/cyberbotics/webots/releases), bajar hasta 2023b y descaragr el .tar: `webots-R2023b-x86-64.tar.bz2`.
@@ -50,7 +50,7 @@ En cada fichero, sustituir `/home/nox/Escritorio/MobileManipulatorsLab/MobileMan
 - Crear un entorno:
 ```bash
 conda create -n MobileManipulators python==3.8
-conda activate SyntheticLearning
+conda activate MobileManipulators
 ```
 - Instalar las depedencias en Python mediante
 ```bash

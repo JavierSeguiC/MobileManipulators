@@ -1,7 +1,7 @@
 #VRML_SIM R2025a utf8
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/devices/hokuyo/protos/HokuyoUrg04lxug01.proto"
-EXTERNPROTO "/home/nox/Escritorio/MobileManipulatorsLab/MobileManipulators/protos/Astra.proto"
-EXTERNPROTO "/home/nox/Escritorio/MobileManipulatorsLab/MobileManipulators/protos/TiagoBase.proto"
+EXTERNPROTO "Astra.proto"
+EXTERNPROTO "TiagoBase.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/pal_robotics/tiago_extensions/protos/TiagoBody.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/pal_robotics/tiago_extensions/protos/TiagoFrontArm.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/pal_robotics/tiago_extensions/protos/TiagoGripper.proto"

@@ -39,7 +39,7 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/kitchen/breakfast/protos/JamJar.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/kitchen/breakfast/protos/CerealBox.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/kitchen/breakfast/protos/BiscuitBox.proto"
-EXTERNPROTO "/home/nox/Escritorio/MobileManipulatorsLab/MobileManipulators/protos/Tiago.proto"
+EXTERNPROTO "../protos/Tiago.proto"
 
 WorldInfo {
 }
