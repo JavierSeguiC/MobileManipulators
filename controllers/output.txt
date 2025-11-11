@@ -1,0 +1,2066 @@
+Creating chain with 15 links and mask of length 15
+Motor 'head_2_joint' initialized with sensor 'head_2_joint_sensor'
+Motor 'head_1_joint' initialized with sensor 'head_1_joint_sensor'
+Motor 'torso_lift_joint' initialized with sensor 'torso_lift_joint_sensor'
+Motor 'arm_1_joint' initialized with sensor 'arm_1_joint_sensor'
+Motor 'arm_2_joint' initialized with sensor 'arm_2_joint_sensor'
+Motor 'arm_3_joint' initialized with sensor 'arm_3_joint_sensor'
+Motor 'arm_4_joint' initialized with sensor 'arm_4_joint_sensor'
+Motor 'arm_5_joint' initialized with sensor 'arm_5_joint_sensor'
+Motor 'arm_6_joint' initialized with sensor 'arm_6_joint_sensor'
+Motor 'arm_7_joint' initialized with sensor 'arm_7_joint_sensor'
+Motor 'wheel_left_joint' initialized with sensor 'wheel_left_joint_sensor'
+Motor 'wheel_right_joint' initialized with sensor 'wheel_right_joint_sensor'
+Motor 'gripper_left_finger_joint' initialized with sensor 'gripper_left_sensor_finger_joint'
+Motor 'gripper_right_finger_joint' initialized with sensor 'gripper_right_sensor_finger_joint'
+Part names: ['head_2_joint', 'head_1_joint', 'torso_lift_joint', 'arm_1_joint', 'arm_2_joint', 'arm_3_joint', 'arm_4_joint', 'arm_5_joint', 'arm_6_joint', 'arm_7_joint', 'wheel_left_joint', 'wheel_right_joint', 'gripper_left_finger_joint', 'gripper_right_finger_joint']
+Number of motors initialized: 14
+Number of sensors initialized: 14
+Camera configured: 64x64
+Initial GPS Position: (0.000, 0.000, 0.095)
+Initial Heading: 0.00°
+Created Recognize Object 1 with timeout 3.0s
+Grasp Object 1: Created simplified grasp controller with threshold=-10.0
+Created Recognize Object 2 with timeout 3.0s
+Grasp Object 2: Created simplified grasp controller with threshold=-10.0
+Created Recognize Object 3 with timeout 3.0s
+Grasp Object 3: Created simplified grasp controller with threshold=-10.0
+All hardware components verified
+Setting torso_lift_joint to position 0.3
+Setting arm_1_joint to position 0.71
+Setting arm_2_joint to position 1.02
+Setting arm_3_joint to position -2.815
+Setting arm_4_joint to position 1.011
+Setting arm_5_joint to position 0
+Setting arm_6_joint to position 0
+Setting arm_7_joint to position 0
+Setting gripper_left_finger_joint to position 0.045
+Setting gripper_right_finger_joint to position 0.045
+Setting head_1_joint to position 0
+Setting head_2_joint to position 0
+Joint torso_lift_joint at 0.0000, target: 0.3000, error: 0.3000
+Joint arm_1_joint at 0.0710, target: 0.7100, error: 0.6390
+Joint arm_2_joint at 0.0000, target: 1.0200, error: 1.0200
+Joint arm_3_joint at 0.0000, target: -2.8150, error: 2.8150
+Joint arm_4_joint at 0.0000, target: 1.0110, error: 1.0110
+Move to Safe Position in progress... (1.2s elapsed)
+Joint torso_lift_joint at 0.0228, target: 0.3000, error: 0.2772
+Joint arm_2_joint at 0.7282, target: 1.0200, error: 0.2918
+Joint arm_3_joint at -0.8797, target: -2.8150, error: 1.9353
+Joint arm_4_joint at 0.8799, target: 1.0110, error: 0.1311
+Move to Safe Position in progress... (2.5s elapsed)
+Joint torso_lift_joint at 0.0462, target: 0.3000, error: 0.2538
+Joint arm_3_joint at -1.7820, target: -2.8150, error: 1.0330
+Move to Safe Position in progress... (3.7s elapsed)
+Joint torso_lift_joint at 0.0695, target: 0.3000, error: 0.2305
+Joint arm_3_joint at -2.6843, target: -2.8150, error: 0.1307
+Move to Safe Position in progress... (5.0s elapsed)
+Joint torso_lift_joint at 0.0929, target: 0.3000, error: 0.2071
+Move to Safe Position in progress... (6.3s elapsed)
+Joint torso_lift_joint at 0.1163, target: 0.3000, error: 0.1837
+Move to Safe Position stopped making progress, considering it complete
+Recognize Object 1: Initialized recognition with timeout 3.0s
+Recognize Object 1: Camera sees 2 objects
+Robot base height: 0.093m
+Torso lift value: 0.129m
+Head tilt: -0.000rad
+Total camera height: 1.113m
+Camera-relative Z: -0.220m
+Z correction: 0.000m
+World Z: 0.893m
+Recognize Object 1: Found object: jam jar at [np.float64(1.7094710155015354), np.float64(-0.29887805922201344), 0.8934740735104998]
+Robot base height: 0.093m
+Torso lift value: 0.129m
+Head tilt: -0.000rad
+Total camera height: 1.113m
+Camera-relative Z: -0.219m
+Z correction: 0.000m
+World Z: 0.894m
+Recognize Object 1: Found object: jam jar at [np.float64(1.9235278121378065), np.float64(0.49662200915319965), 0.8940027178610384]
+Recognize Object 1: Camera sees 2 objects
+Robot base height: 0.093m
+Torso lift value: 0.129m
+Head tilt: -0.000rad
+Total camera height: 1.113m
+Camera-relative Z: -0.220m
+Z correction: 0.000m
+World Z: 0.893m
+Recognize Object 1: Found object: jam jar at [np.float64(1.7094710155015354), np.float64(-0.29887805922201344), 0.8934740735104998]
+Robot base height: 0.093m
+Torso lift value: 0.129m
+Head tilt: -0.000rad
+Total camera height: 1.113m
+Camera-relative Z: -0.219m
+Z correction: 0.000m
+World Z: 0.894m
+Recognize Object 1: Found object: jam jar at [np.float64(1.9235278121378065), np.float64(0.49662200915319965), 0.8940027178610384]
+Recognize Object 1: Camera sees 2 objects
+Robot base height: 0.093m
+Torso lift value: 0.129m
+Head tilt: -0.000rad
+Total camera height: 1.113m
+Camera-relative Z: -0.220m
+Z correction: 0.000m
+World Z: 0.893m
+Recognize Object 1: Found object: jam jar at [np.float64(1.7094710155015354), np.float64(-0.29887805922201344), 0.8934740735104998]
+Robot base height: 0.093m
+Torso lift value: 0.129m
+Head tilt: -0.000rad
+Total camera height: 1.113m
+Camera-relative Z: -0.219m
+Z correction: 0.000m
+World Z: 0.894m
+Recognize Object 1: Found object: jam jar at [np.float64(1.9235278121378065), np.float64(0.49662200915319965), 0.8940027178610384]
+Recognize Object 1: Camera sees 2 objects
+Robot base height: 0.093m
+Torso lift value: 0.129m
+Head tilt: -0.000rad
+Total camera height: 1.113m
+Camera-relative Z: -0.220m
+Z correction: 0.000m
+World Z: 0.893m
+Recognize Object 1: Found object: jam jar at [np.float64(1.7094710155015354), np.float64(-0.29887805922201344), 0.8934740735104998]
+Robot base height: 0.093m
+Torso lift value: 0.129m
+Head tilt: -0.000rad
+Total camera height: 1.113m
+Camera-relative Z: -0.219m
+Z correction: 0.000m
+World Z: 0.894m
+Recognize Object 1: Found object: jam jar at [np.float64(1.9235278121378065), np.float64(0.49662200915319965), 0.8940027178610384]
+Recognize Object 1: Camera sees 2 objects
+Robot base height: 0.093m
+Torso lift value: 0.129m
+Head tilt: -0.000rad
+Total camera height: 1.113m
+Camera-relative Z: -0.220m
+Z correction: 0.000m
+World Z: 0.893m
+Recognize Object 1: Found object: jam jar at [np.float64(1.7094710155015354), np.float64(-0.29887805922201344), 0.8934740735104998]
+Robot base height: 0.093m
+Torso lift value: 0.129m
+Head tilt: -0.000rad
+Total camera height: 1.113m
+Camera-relative Z: -0.219m
+Z correction: 0.000m
+World Z: 0.894m
+Recognize Object 1: Found object: jam jar at [np.float64(1.9235278121378065), np.float64(0.49662200915319965), 0.8940027178610384]
+Recognize Object 1: Stored target position [np.float64(1.7094710155015354), np.float64(-0.29887805922201344), 0.8934740735104998] and object jam jar on blackboard
+Setting torso_lift_joint to position 0.3
+Setting arm_1_joint to position 0.7
+Setting arm_2_joint to position 0.4
+Setting arm_3_joint to position -1.5
+Setting arm_4_joint to position 1.7
+Setting arm_5_joint to position -1.5
+Setting arm_6_joint to position 0.0
+Setting arm_7_joint to position 0.0
+Joint torso_lift_joint at 0.1292, target: 0.3000, error: 0.1708
+Joint arm_2_joint at 1.0200, target: 0.4000, error: 0.6200
+Joint arm_3_joint at -2.8150, target: -1.5000, error: 1.3150
+Joint arm_4_joint at 1.0110, target: 1.7000, error: 0.6890
+Joint arm_5_joint at -0.0000, target: -1.5000, error: 1.5000
+Prepare Arm for Approach 1 in progress... (1.2s elapsed)
+Joint torso_lift_joint at 0.1525, target: 0.3000, error: 0.1475
+Joint arm_3_joint at -1.9126, target: -1.5000, error: 0.4126
+Joint arm_5_joint at -0.7488, target: -1.5000, error: 0.7512
+Prepare Arm for Approach 1 in progress... (2.5s elapsed)
+Joint torso_lift_joint at 0.1759, target: 0.3000, error: 0.1241
+GPS Position: (0.002, -0.001, 0.093)
+Heading: 0.00° (0.00, 1.00)
+Total distance traveled: 0.00m
+Displacement from start: 0.00m
+Path efficiency: 24.7%
+Battery level: N/A
+WARNING: Possible oscillation in joint arm_2_joint
+WARNING: Possible oscillation in joint arm_3_joint
+WARNING: Possible oscillation in joint arm_4_joint
+WARNING: Possible oscillation in joint arm_5_joint
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+Prepare Arm for Approach 1 in progress... (3.8s elapsed)
+Joint torso_lift_joint at 0.1993, target: 0.3000, error: 0.1007
+Prepare Arm for Approach 1 in progress... (5.1s elapsed)
+Prepare Arm for Approach 1 stopped making progress, considering it complete
+Move to Object 1: Using target position from blackboard: [np.float64(1.7094710155015354), np.float64(-0.29887805922201344), 0.8934740735104998]
+Move to Object 1: Starting from GPS position (0.002, -0.001)
+Move to Object 1: Target at (1.709, -0.299)
+State: ORIENTING, Distance: 1.7077m, Angle: -6.13°
+Robot at (0.028, -0.001), Target at (1.709, -0.299)
+Robot heading: -3.91°, Target bearing: -10.04°
+State: ORIENTING, Distance: 1.6910m, Angle: -3.50°
+Robot at (0.045, -0.002), Target at (1.709, -0.299)
+Robot heading: -6.60°, Target bearing: -10.10°
+Orientation complete. Angle: -2.85°
+GPS Position: (0.049, -0.003, 0.093)
+Heading: -7.33° (-0.13, 0.99)
+Total distance traveled: 0.04m
+Displacement from start: 0.04m
+Path efficiency: 99.9%
+Battery level: N/A
+WARNING: Possible oscillation in joint wheel_left_joint
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+Stopping to adjust arm at 1.28m
+Robot stabilized, starting arm adjustment
+State: ADJUSTING_ARM, Distance: 1.2677m, Angle: 0.68°
+Robot at (0.459, -0.092), Target at (1.709, -0.299)
+Robot heading: -10.08°, Target bearing: -9.40°
+Move Arm 1: Using target position from blackboard: [np.float64(1.7094710155015354), np.float64(-0.29887805922201344), 0.8934740735104998]
+Move Arm 1: Target position: [np.float64(1.7094710155015354), np.float64(-0.29887805922201344), 0.8934740735104998]
+Robot at (0.459, -0.092), angle -10.1°
+Target at (1.709, -0.299), distance: 1.268m
+Approach vector: 170.6°
+Calculated offsets: (-0.044, 0.007)
+Attempting IK for final target: [np.float64(1.6650749923576198), np.float64(-0.16153005752053606), 0.8934740735104998]
+Initial joint positions (clamped): [0.0, 0.0, np.float64(0.2997449378340609), 0.0, np.float64(0.7000000824589477), np.float64(0.399981341236944), np.float64(-1.4999869891260889), np.float64(1.7000048692990213), np.float64(-1.5000000002076777), np.float64(-3.2296803187790125e-06), np.float64(-3.1311005306014467e-06), 0.0, 0.0, np.float64(0.045), 0.0]
+IK solution found successfully
+Move Arm 1: Started arm movement with angles {'torso_lift_joint': np.float64(0.2997449378340609), 'arm_1_joint': np.float64(1.358336184890078), 'arm_2_joint': np.float64(-0.01550233877714272), 'arm_3_joint': np.float64(-1.5865139240044812), 'arm_4_joint': np.float64(0.15464152907229392), 'arm_5_joint': np.float64(-1.5697341378566891), 'arm_6_joint': np.float64(0.5657862101536298), 'arm_7_joint': np.float64(-1.5931240005750944), 'gripper_right_finger_joint': np.float64(0.045)}
+Arm adjustment complete, continuing approach
+State: FINAL_APPROACH, Distance: 1.1892m, Angle: 0.19°
+Robot at (0.536, -0.105), Target at (1.709, -0.299)
+Robot heading: -9.57°, Target bearing: -9.39°
+GPS Position: (0.638, -0.122, 0.093)
+Heading: -9.39° (-0.16, 0.99)
+Total distance traveled: 0.19m
+Displacement from start: 0.18m
+Path efficiency: 98.1%
+Battery level: N/A
+WARNING: Possible oscillation in joint arm_1_joint
+WARNING: Possible oscillation in joint arm_4_joint
+WARNING: Possible oscillation in joint arm_6_joint
+WARNING: Possible oscillation in joint arm_7_joint
+WARNING: Possible oscillation in joint wheel_left_joint
+WARNING: Possible oscillation in joint wheel_right_joint
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+State: FINAL_APPROACH, Distance: 1.0406m, Angle: -0.01°
+Robot at (0.683, -0.129), Target at (1.709, -0.299)
+Robot heading: -9.38°, Target bearing: -9.39°
+Arrived at target, distance: 1.00m
+Grasp Object 1: Starting simplified grasp sequence
+Grasp Object 1: Contact detected: L=-16.00, R=-15.89
+Grasp Object 1: Grasp successful! L=-16.00, R=-16.00
+Grasp Object 1: Set grasp_success to True
+Grasp Object 1: Set grasp_success to True
+Starting lift sequence
+Arm moving to lift position
+Lift sequence completed
+Object securely held with forces: L=-11.13, R=-16.00
+Starting controlled backup after grasp
+Starting backup movement
+Backup complete, moved 0.122m
+Move to Table Waypoint 1: Starting navigation from [0.6059165019652653, -0.11675290486128333]
+Move to Table Waypoint 1: Waypoint sequence: [(1.0, -0.9, 0.095), (0.2, -1.5, 0.095)]
+GPS=(0.81, -0.31), heading=-63.4°, dist to WP=0.61
+GPS=(0.82, -0.32), heading=-64.2°, dist to WP=0.61
+GPS Position: (0.860, -0.427, 0.093)
+Heading: -72.10° (-0.95, 0.31)
+Total distance traveled: 0.60m
+Displacement from start: 0.32m
+Path efficiency: 53.1%
+Battery level: N/A
+WARNING: Possible oscillation in joint arm_4_joint
+WARNING: Possible oscillation in joint arm_7_joint
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+GPS=(0.90, -0.58), heading=-73.5°, dist to WP=0.34
+GPS=(0.91, -0.58), heading=-73.5°, dist to WP=0.33
+GPS=(0.95, -0.72), heading=-73.6°, dist to WP=0.19
+GPS=(0.95, -0.72), heading=-73.6°, dist to WP=0.18
+Reached waypoint: (1.0, -0.9, 0.095) (GPS: 0.96, -0.76)
+GPS=(0.89, -1.21), heading=-121.2°, dist to WP=0.75
+GPS=(0.88, -1.23), heading=-122.7°, dist to WP=0.73
+GPS Position: (0.541, -1.513, 0.093)
+Heading: -161.91° (-0.31, -0.95)
+Total distance traveled: 1.04m
+Displacement from start: 0.93m
+Path efficiency: 89.5%
+Battery level: N/A
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+GPS=(0.42, -1.54), heading=-173.2°, dist to WP=0.23
+Reached waypoint: (0.2, -1.5, 0.095) (GPS: 0.34, -1.55)
+Move to Table Waypoint 1: All waypoints reached!
+Setting torso_lift_joint to position 0.2
+Setting arm_1_joint to position 1.6
+Setting arm_2_joint to position 1.02
+Setting arm_3_joint to position 0
+Setting arm_4_joint to position 1.2
+Setting arm_5_joint to position 0.5
+Setting arm_6_joint to position 0
+Setting arm_7_joint to position -2.07
+Joint arm_1_joint at 0.7000, target: 1.6000, error: 0.9000
+Joint arm_2_joint at 0.4000, target: 1.0200, error: 0.6200
+Joint arm_3_joint at -1.5000, target: 0.0000, error: 1.5000
+Joint arm_4_joint at 1.7000, target: 1.2000, error: 0.5000
+Joint arm_5_joint at -1.5000, target: 0.5000, error: 2.0000
+Joint arm_7_joint at 0.0000, target: -2.0700, error: 2.0700
+Place Object 1 in progress... (1.2s elapsed)
+Joint arm_1_joint at 1.4488, target: 1.6000, error: 0.1512
+Joint arm_3_joint at -0.5975, target: 0.0000, error: 0.5975
+Joint arm_5_joint at -0.7513, target: 0.5000, error: 1.2513
+Joint arm_7_joint at -0.6758, target: -2.0700, error: 1.3942
+Place Object 1 in progress... (2.5s elapsed)
+Joint arm_5_joint at -0.0025, target: 0.5000, error: 0.5025
+Joint arm_7_joint at -1.3516, target: -2.0700, error: 0.7184
+Place Object 1 in progress... (3.8s elapsed)
+Place Object 1 completed successfully.
+Open Gripper 1: Opening gripper to position 0.045
+Open Gripper 1: Gripper fully opened
+Open Gripper 1: Gripper open sequence complete
+Setting torso_lift_joint to position 0.3
+Setting arm_1_joint to position 0.71
+Setting arm_2_joint to position 1.02
+Setting arm_3_joint to position -2.815
+Setting arm_4_joint to position 1.011
+Setting arm_5_joint to position 0
+Setting arm_6_joint to position 0
+Setting arm_7_joint to position 0
+Setting gripper_left_finger_joint to position 0.045
+Setting gripper_right_finger_joint to position 0.045
+Setting head_1_joint to position 0
+Setting head_2_joint to position 0
+Joint arm_1_joint at 1.6000, target: 0.7100, error: 0.8900
+Joint arm_3_joint at -0.0000, target: -2.8150, error: 2.8150
+Joint arm_4_joint at 1.2000, target: 1.0110, error: 0.1890
+Joint arm_5_joint at 0.4999, target: 0.0000, error: 0.4999
+Joint arm_7_joint at -2.0503, target: 0.0000, error: 2.0503
+Reset Arm For Home 1 in progress... (1.2s elapsed)
+Joint arm_1_joint at 0.8512, target: 0.7100, error: 0.1412
+Joint arm_3_joint at -0.9024, target: -2.8150, error: 1.9126
+Joint arm_7_joint at -1.3745, target: 0.0000, error: 1.3745
+Reset Arm For Home 1 in progress... (2.5s elapsed)
+Joint arm_3_joint at -1.8046, target: -2.8150, error: 1.0104
+Joint arm_7_joint at -0.6988, target: 0.0000, error: 0.6988
+Reset Arm For Home 1 in progress... (3.8s elapsed)
+Joint arm_3_joint at -2.7069, target: -2.8150, error: 0.1081
+Reset Arm For Home 1 timed out after 4.0 seconds, considering it complete
+Move to Home Waypoint 1: Starting navigation from [0.3268585544749221, -1.5450911802534604]
+Move to Home Waypoint 1: Waypoint sequence: [(0.3, 0.0, 0.095)]
+GPS=(0.32, -1.54), heading=174.6°, dist to WP=1.54
+GPS=(0.31, -1.54), heading=173.5°, dist to WP=1.54
+GPS Position: (0.299, -1.543, 0.093)
+Heading: 170.36° (0.17, -0.99)
+Total distance traveled: 0.03m
+Displacement from start: 0.03m
+Path efficiency: 85.0%
+Battery level: N/A
+WARNING: Possible oscillation in joint arm_1_joint
+WARNING: Possible oscillation in joint arm_3_joint
+WARNING: Possible oscillation in joint arm_5_joint
+WARNING: Possible oscillation in joint arm_7_joint
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+GPS=(0.15, -0.99), heading=81.7°, dist to WP=1.00
+GPS=(0.15, -0.98), heading=81.7°, dist to WP=0.99
+GPS=(0.22, -0.54), heading=81.1°, dist to WP=0.55
+GPS=(0.22, -0.54), heading=81.1°, dist to WP=0.54
+GPS=(0.25, -0.30), heading=81.1°, dist to WP=0.30
+GPS=(0.25, -0.30), heading=81.1°, dist to WP=0.30
+GPS Position: (0.263, -0.236, 0.093)
+Heading: 81.14° (0.99, 0.15)
+Total distance traveled: 0.60m
+Displacement from start: 0.60m
+Path efficiency: 100.0%
+Battery level: N/A
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+GPS=(0.27, -0.17), heading=81.1°, dist to WP=0.17
+GPS=(0.27, -0.16), heading=81.1°, dist to WP=0.17
+Reached waypoint: (0.3, 0.0, 0.095) (GPS: 0.28, -0.15)
+Move to Home Waypoint 1: All waypoints reached!
+Recognize Object 2: Initialized recognition with timeout 3.0s
+Recognize Object 2: Object recognition timed out after 3.0s
+Comprehensive Scanner: Starting comprehensive scan with 8 angles
+Comprehensive Scanner: Rotation 1/8 complete
+Created Recognize at position 1 with timeout 2.0s
+Recognize at position 1: Initialized recognition with timeout 2.0s
+Comprehensive Scanner: Moving to angle 2/8
+Comprehensive Scanner: Rotation 2/8 complete
+Created Recognize at position 2 with timeout 2.0s
+Recognize at position 2: Initialized recognition with timeout 2.0s
+Comprehensive Scanner: Moving to angle 3/8
+Comprehensive Scanner: Rotation 3/8 complete
+Created Recognize at position 3 with timeout 2.0s
+Recognize at position 3: Initialized recognition with timeout 2.0s
+Comprehensive Scanner: Moving to angle 4/8
+Comprehensive Scanner: Rotation 4/8 complete
+Created Recognize at position 4 with timeout 2.0s
+Recognize at position 4: Initialized recognition with timeout 2.0s
+Comprehensive Scanner: Moving to angle 5/8
+GPS Position: (0.351, 0.033, 0.093)
+Heading: 46.60° (0.73, 0.69)
+Total distance traveled: 0.20m
+Displacement from start: 0.19m
+Path efficiency: 98.8%
+Battery level: N/A
+WARNING: Possible oscillation in joint wheel_left_joint
+WARNING: Possible oscillation in joint wheel_right_joint
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+Comprehensive Scanner: Rotation 5/8 complete
+Created Recognize at position 5 with timeout 2.0s
+Recognize at position 5: Initialized recognition with timeout 2.0s
+Recognize at position 5: Camera sees 1 objects
+Robot base height: 0.093m
+Torso lift value: 0.350m
+Head tilt: -0.200rad
+Total camera height: 1.334m
+Camera-relative Z: -0.176m
+Z correction: -0.280m
+World Z: 0.877m
+Recognize at position 5: Found object: honey jar at [np.float64(1.745414234777778), np.float64(0.7339341372046686), 0.8773393243210028]
+Recognize at position 5: Camera sees 1 objects
+Robot base height: 0.093m
+Torso lift value: 0.350m
+Head tilt: -0.200rad
+Total camera height: 1.334m
+Camera-relative Z: -0.176m
+Z correction: -0.280m
+World Z: 0.877m
+Recognize at position 5: Found object: honey jar at [np.float64(1.745414234777778), np.float64(0.7339341372046686), 0.8773393243210028]
+Recognize at position 5: Camera sees 1 objects
+Robot base height: 0.093m
+Torso lift value: 0.350m
+Head tilt: -0.200rad
+Total camera height: 1.334m
+Camera-relative Z: -0.176m
+Z correction: -0.280m
+World Z: 0.877m
+Recognize at position 5: Found object: honey jar at [np.float64(1.745414234777778), np.float64(0.7339341372046686), 0.8773393243210028]
+Recognize at position 5: Camera sees 1 objects
+Robot base height: 0.093m
+Torso lift value: 0.350m
+Head tilt: -0.200rad
+Total camera height: 1.334m
+Camera-relative Z: -0.176m
+Z correction: -0.280m
+World Z: 0.877m
+Recognize at position 5: Found object: honey jar at [np.float64(1.745414234777778), np.float64(0.7339341372046686), 0.8773393243210028]
+Recognize at position 5: Camera sees 1 objects
+Robot base height: 0.093m
+Torso lift value: 0.350m
+Head tilt: -0.200rad
+Total camera height: 1.334m
+Camera-relative Z: -0.176m
+Z correction: -0.280m
+World Z: 0.877m
+Recognize at position 5: Found object: honey jar at [np.float64(1.745414234777778), np.float64(0.7339341372046686), 0.8773393243210028]
+Recognize at position 5: Stored target position [np.float64(1.745414234777778), np.float64(0.7339341372046686), 0.8773393243210028] and object honey jar on blackboard
+Comprehensive Scanner: Object recognized after rotation
+Setting torso_lift_joint to position 0.3
+Setting arm_1_joint to position 0.7
+Setting arm_2_joint to position 0.4
+Setting arm_3_joint to position -1.5
+Setting arm_4_joint to position 1.7
+Setting arm_5_joint to position -1.5
+Setting arm_6_joint to position 0.0
+Setting arm_7_joint to position 0.0
+Joint arm_2_joint at 1.0200, target: 0.4000, error: 0.6200
+Joint arm_3_joint at -2.8150, target: -1.5000, error: 1.3150
+Joint arm_4_joint at 1.0110, target: 1.7000, error: 0.6890
+Joint arm_5_joint at 0.0000, target: -1.5000, error: 1.5000
+Prepare Arm for Approach 2 in progress... (1.2s elapsed)
+Joint arm_3_joint at -1.9126, target: -1.5000, error: 0.4126
+Joint arm_5_joint at -0.7488, target: -1.5000, error: 0.7512
+Prepare Arm for Approach 2 in progress... (2.5s elapsed)
+Prepare Arm for Approach 2 completed successfully.
+Move to Object 2: Using target position from blackboard: [np.float64(1.745414234777778), np.float64(0.7339341372046686), 0.8773393243210028]
+Move to Object 2: Starting from GPS position (0.372, 0.055)
+Move to Object 2: Target at (1.745, 0.734)
+State: ORIENTING, Distance: 1.5044m, Angle: -3.67°
+Robot at (0.394, 0.073), Target at (1.745, 0.734)
+Robot heading: 29.74°, Target bearing: 26.08°
+Orientation complete. Angle: -2.82°
+GPS Position: (0.511, 0.115, 0.093)
+Heading: 14.13° (0.24, 0.97)
+Total distance traveled: 0.15m
+Displacement from start: 0.15m
+Path efficiency: 99.1%
+Battery level: N/A
+WARNING: Possible oscillation in joint wheel_right_joint
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+State: APPROACHING, Distance: 1.3190m, Angle: 14.24°
+Robot at (0.573, 0.129), Target at (1.745, 0.734)
+Robot heading: 13.06°, Target bearing: 27.30°
+Stopping to adjust arm at 1.28m
+Robot stabilized, starting arm adjustment
+Move Arm 2: Using target position from blackboard: [np.float64(1.745414234777778), np.float64(0.7339341372046686), 0.8773393243210028]
+Move Arm 2: Target position: [np.float64(1.745414234777778), np.float64(0.7339341372046686), 0.8773393243210028]
+Robot at (0.628, 0.143), angle 15.6°
+Target at (1.745, 0.734), distance: 1.264m
+Approach vector: 207.9°
+Calculated offsets: (-0.040, -0.021)
+Attempting IK for final target: [np.float64(1.7056368150349246), np.float64(0.06289234834058044), 0.8773393243210028]
+Initial joint positions (clamped): [0.0, 0.0, np.float64(0.29974509600998633), 0.0, np.float64(0.700000072872626), np.float64(0.3999813573256167), np.float64(-1.4999870028768243), np.float64(1.7000048733897162), np.float64(-1.5000000002346912), np.float64(-3.2128736684611272e-06), np.float64(3.1306355292832675e-06), 0.0, 0.0, np.float64(0.045), 0.0]
+IK solution found successfully
+Move Arm 2: Started arm movement with angles {'torso_lift_joint': np.float64(0.29974509600998633), 'arm_1_joint': np.float64(1.500705523168537), 'arm_2_joint': np.float64(-0.02692975587134976), 'arm_3_joint': np.float64(-1.5870859788856493), 'arm_4_joint': np.float64(0.15463800910850795), 'arm_5_joint': np.float64(-1.5557252108958266), 'arm_6_joint': np.float64(0.5659956922177177), 'arm_7_joint': np.float64(-1.6124097065186185), 'gripper_right_finger_joint': np.float64(0.045)}
+Arm adjustment complete, continuing approach
+State: FINAL_APPROACH, Distance: 1.2365m, Angle: 10.27°
+Robot at (0.655, 0.151), Target at (1.745, 0.734)
+Robot heading: 17.86°, Target bearing: 28.13°
+Arrived at target, distance: 1.00m
+Grasp Object 2: Starting simplified grasp sequence
+Grasp Object 2: Contact detected: L=-16.00, R=-14.45
+GPS Position: (0.874, 0.251, 0.093)
+Heading: 28.80° (0.48, 0.88)
+Total distance traveled: 0.27m
+Displacement from start: 0.27m
+Path efficiency: 99.5%
+Battery level: N/A
+WARNING: Possible oscillation in joint arm_7_joint
+WARNING: Possible oscillation in joint wheel_left_joint
+WARNING: Possible oscillation in joint wheel_right_joint
+Grasp Object 2: Grasp successful! L=-16.00, R=-16.00
+Grasp Object 2: Set grasp_success to True
+Grasp Object 2: Set grasp_success to True
+Starting lift sequence
+Arm moving to lift position
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+Lift sequence completed
+Object securely held with forces: L=-11.23, R=-16.03
+Starting controlled backup after grasp
+Starting backup movement
+Backup complete, moved 0.122m
+Move to Table Waypoint 2: Starting navigation from [0.767327519915171, 0.19153487540120934]
+Move to Table Waypoint 2: Waypoint sequence: [(1.0, -0.9, 0.095), (0.2, -1.5, 0.095)]
+GPS=(0.67, 0.16), heading=10.5°, dist to WP=1.11
+GPS=(0.83, -0.22), heading=-75.9°, dist to WP=0.70
+GPS=(0.84, -0.23), heading=-75.9°, dist to WP=0.69
+GPS Position: (0.896, -0.474, 0.093)
+Heading: -76.25° (-0.97, 0.24)
+Total distance traveled: 0.89m
+Displacement from start: 0.70m
+Path efficiency: 78.8%
+Battery level: N/A
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+GPS=(0.91, -0.52), heading=-76.2°, dist to WP=0.39
+GPS=(0.91, -0.53), heading=-76.2°, dist to WP=0.38
+GPS=(0.95, -0.69), heading=-76.2°, dist to WP=0.21
+GPS=(0.95, -0.70), heading=-76.2°, dist to WP=0.21
+Reached waypoint: (1.0, -0.9, 0.095) (GPS: 0.96, -0.76)
+GPS=(0.97, -0.99), heading=-103.7°, dist to WP=0.92
+GPS=(0.97, -1.01), heading=-105.9°, dist to WP=0.91
+GPS=(0.53, -1.49), heading=-162.8°, dist to WP=0.33
+GPS=(0.53, -1.49), heading=-163.5°, dist to WP=0.33
+GPS Position: (0.490, -1.499, 0.093)
+Heading: -166.93° (-0.23, -0.97)
+Total distance traveled: 1.03m
+Displacement from start: 0.93m
+Path efficiency: 89.4%
+Battery level: N/A
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+Reached waypoint: (0.2, -1.5, 0.095) (GPS: 0.35, -1.52)
+Move to Table Waypoint 2: All waypoints reached!
+Setting torso_lift_joint to position 0.2
+Setting arm_1_joint to position 1.6
+Setting arm_2_joint to position 1.02
+Setting arm_3_joint to position 0
+Setting arm_4_joint to position 1.2
+Setting arm_5_joint to position 0.5
+Setting arm_6_joint to position 0
+Setting arm_7_joint to position -2.07
+Joint arm_1_joint at 0.7000, target: 1.6000, error: 0.9000
+Joint arm_2_joint at 0.4000, target: 1.0200, error: 0.6200
+Joint arm_3_joint at -1.5000, target: 0.0000, error: 1.5000
+Joint arm_4_joint at 1.7000, target: 1.2000, error: 0.5000
+Joint arm_5_joint at -1.5000, target: 0.5000, error: 2.0000
+Joint arm_7_joint at -0.0000, target: -2.0700, error: 2.0700
+Place Object 2 in progress... (1.2s elapsed)
+Joint arm_1_joint at 1.4488, target: 1.6000, error: 0.1512
+Joint arm_3_joint at -0.5975, target: 0.0000, error: 0.5975
+Joint arm_5_joint at -0.7513, target: 0.5000, error: 1.2513
+Joint arm_7_joint at -0.6758, target: -2.0700, error: 1.3942
+Place Object 2 in progress... (2.5s elapsed)
+Joint arm_5_joint at -0.0025, target: 0.5000, error: 0.5025
+Joint arm_7_joint at -1.3516, target: -2.0700, error: 0.7184
+Place Object 2 in progress... (3.8s elapsed)
+Place Object 2 completed successfully.
+Open Gripper 2: Opening gripper to position 0.045
+Open Gripper 2: Gripper fully opened
+Open Gripper 2: Gripper open sequence complete
+Setting torso_lift_joint to position 0.3
+Setting arm_1_joint to position 0.71
+Setting arm_2_joint to position 1.02
+Setting arm_3_joint to position -2.815
+Setting arm_4_joint to position 1.011
+Setting arm_5_joint to position 0
+Setting arm_6_joint to position 0
+Setting arm_7_joint to position 0
+Setting gripper_left_finger_joint to position 0.045
+Setting gripper_right_finger_joint to position 0.045
+Setting head_1_joint to position 0
+Setting head_2_joint to position 0
+Joint arm_1_joint at 1.6000, target: 0.7100, error: 0.8900
+Joint arm_3_joint at -0.0000, target: -2.8150, error: 2.8150
+Joint arm_4_joint at 1.2000, target: 1.0110, error: 0.1890
+Joint arm_5_joint at 0.4999, target: 0.0000, error: 0.4999
+Joint arm_7_joint at -2.0503, target: 0.0000, error: 2.0503
+Joint head_2_joint at -0.2000, target: 0.0000, error: 0.2000
+Reset Arm For Home 2 in progress... (1.2s elapsed)
+Joint arm_1_joint at 0.8512, target: 0.7100, error: 0.1412
+Joint arm_3_joint at -0.9024, target: -2.8150, error: 1.9126
+Joint arm_7_joint at -1.3745, target: 0.0000, error: 1.3745
+Reset Arm For Home 2 in progress... (2.5s elapsed)
+Joint arm_3_joint at -1.8046, target: -2.8150, error: 1.0104
+Joint arm_7_joint at -0.6988, target: 0.0000, error: 0.6988
+Reset Arm For Home 2 in progress... (3.8s elapsed)
+Joint arm_3_joint at -2.7069, target: -2.8150, error: 0.1081
+Reset Arm For Home 2 timed out after 4.0 seconds, considering it complete
+Move to Home Waypoint 2: Starting navigation from [0.3465135891143179, -1.5153210399565062]
+Move to Home Waypoint 2: Waypoint sequence: [(0.3, 0.0, 0.095)]
+GPS Position: (0.346, -1.515, 0.093)
+Heading: 177.62° (0.04, -1.00)
+Total distance traveled: 0.00m
+Displacement from start: 0.00m
+Path efficiency: 24.1%
+Battery level: N/A
+WARNING: Possible oscillation in joint arm_1_joint
+WARNING: Possible oscillation in joint arm_3_joint
+WARNING: Possible oscillation in joint arm_5_joint
+WARNING: Possible oscillation in joint arm_7_joint
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+GPS=(0.14, -1.35), heading=101.1°, dist to WP=1.36
+GPS=(0.14, -1.34), heading=98.6°, dist to WP=1.35
+GPS=(0.19, -0.74), heading=81.6°, dist to WP=0.75
+GPS=(0.19, -0.73), heading=81.6°, dist to WP=0.74
+GPS=(0.24, -0.41), heading=81.5°, dist to WP=0.41
+GPS=(0.24, -0.40), heading=81.5°, dist to WP=0.41
+GPS Position: (0.263, -0.250, 0.093)
+Heading: 81.51° (0.99, 0.15)
+Total distance traveled: 0.63m
+Displacement from start: 0.63m
+Path efficiency: 100.0%
+Battery level: N/A
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+GPS=(0.27, -0.23), heading=81.5°, dist to WP=0.23
+GPS=(0.27, -0.22), heading=81.5°, dist to WP=0.23
+Reached waypoint: (0.3, 0.0, 0.095) (GPS: 0.28, -0.15)
+Move to Home Waypoint 2: All waypoints reached!
+Recognize Object 3: Initialized recognition with timeout 3.0s
+Recognize Object 3: Object recognition timed out after 3.0s
+Comprehensive Scanner: Starting comprehensive scan with 8 angles
+Comprehensive Scanner: Rotation 1/8 complete
+Created Recognize at position 1 with timeout 2.0s
+Recognize at position 1: Initialized recognition with timeout 2.0s
+Comprehensive Scanner: Moving to angle 2/8
+Comprehensive Scanner: Rotation 2/8 complete
+Created Recognize at position 2 with timeout 2.0s
+Recognize at position 2: Initialized recognition with timeout 2.0s
+Comprehensive Scanner: Moving to angle 3/8
+Comprehensive Scanner: Rotation 3/8 complete
+Created Recognize at position 3 with timeout 2.0s
+Recognize at position 3: Initialized recognition with timeout 2.0s
+Comprehensive Scanner: Moving to angle 4/8
+Comprehensive Scanner: Rotation 4/8 complete
+Created Recognize at position 4 with timeout 2.0s
+Recognize at position 4: Initialized recognition with timeout 2.0s
+GPS Position: (0.346, 0.027, 0.093)
+Heading: 49.20° (0.76, 0.65)
+Total distance traveled: 0.19m
+Displacement from start: 0.19m
+Path efficiency: 98.9%
+Battery level: N/A
+WARNING: Possible oscillation in joint wheel_left_joint
+WARNING: Possible oscillation in joint wheel_right_joint
+Comprehensive Scanner: Moving to angle 5/8
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+Comprehensive Scanner: Rotation 5/8 complete
+Created Recognize at position 5 with timeout 2.0s
+Recognize at position 5: Initialized recognition with timeout 2.0s
+Comprehensive Scanner: Moving to angle 6/8
+Comprehensive Scanner: Rotation 6/8 complete
+Created Recognize at position 6 with timeout 2.0s
+Recognize at position 6: Initialized recognition with timeout 2.0s
+Recognize at position 6: Camera sees 1 objects
+Robot base height: 0.093m
+Torso lift value: 0.350m
+Head tilt: -0.200rad
+Total camera height: 1.334m
+Camera-relative Z: -0.157m
+Z correction: -0.280m
+World Z: 0.897m
+Recognize at position 6: Found object: jam jar at [np.float64(1.9608198675667712), np.float64(0.5160793793029255), 0.8968897661828407]
+Recognize at position 6: Camera sees 1 objects
+Robot base height: 0.093m
+Torso lift value: 0.350m
+Head tilt: -0.200rad
+Total camera height: 1.334m
+Camera-relative Z: -0.157m
+Z correction: -0.280m
+World Z: 0.897m
+Recognize at position 6: Found object: jam jar at [np.float64(1.9608198675667712), np.float64(0.5160793793029255), 0.8968897661828407]
+Recognize at position 6: Camera sees 1 objects
+Robot base height: 0.093m
+Torso lift value: 0.350m
+Head tilt: -0.200rad
+Total camera height: 1.334m
+Camera-relative Z: -0.157m
+Z correction: -0.280m
+World Z: 0.897m
+Recognize at position 6: Found object: jam jar at [np.float64(1.9608198675667712), np.float64(0.5160793793029255), 0.8968897661828407]
+Recognize at position 6: Camera sees 1 objects
+Robot base height: 0.093m
+Torso lift value: 0.350m
+Head tilt: -0.200rad
+Total camera height: 1.334m
+Camera-relative Z: -0.157m
+Z correction: -0.280m
+World Z: 0.897m
+Recognize at position 6: Found object: jam jar at [np.float64(1.9608198675667712), np.float64(0.5160793793029255), 0.8968897661828407]
+Recognize at position 6: Camera sees 1 objects
+Robot base height: 0.093m
+Torso lift value: 0.350m
+Head tilt: -0.200rad
+Total camera height: 1.334m
+Camera-relative Z: -0.157m
+Z correction: -0.280m
+World Z: 0.897m
+Recognize at position 6: Found object: jam jar at [np.float64(1.9608198675667712), np.float64(0.5160793793029255), 0.8968897661828407]
+Recognize at position 6: Stored target position [np.float64(1.9608198675667712), np.float64(0.5160793793029255), 0.8968897661828407] and object jam jar on blackboard
+Comprehensive Scanner: Object recognized after rotation
+Setting torso_lift_joint to position 0.3
+Setting arm_1_joint to position 0.7
+Setting arm_2_joint to position 0.4
+Setting arm_3_joint to position -1.5
+Setting arm_4_joint to position 1.7
+Setting arm_5_joint to position -1.5
+Setting arm_6_joint to position 0.0
+Setting arm_7_joint to position 0.0
+Joint arm_2_joint at 1.0200, target: 0.4000, error: 0.6200
+Joint arm_3_joint at -2.8150, target: -1.5000, error: 1.3150
+Joint arm_4_joint at 1.0110, target: 1.7000, error: 0.6890
+Joint arm_5_joint at 0.0000, target: -1.5000, error: 1.5000
+Prepare Arm for Approach 3 in progress... (1.2s elapsed)
+Joint arm_3_joint at -1.9126, target: -1.5000, error: 0.4126
+Joint arm_5_joint at -0.7488, target: -1.5000, error: 0.7512
+Prepare Arm for Approach 3 in progress... (2.5s elapsed)
+Prepare Arm for Approach 3 completed successfully.
+Move to Object 3: Using target position from blackboard: [np.float64(1.9608198675667712), np.float64(0.5160793793029255), 0.8968897661828407]
+Move to Object 3: Starting from GPS position (0.398, 0.078)
+Move to Object 3: Target at (1.961, 0.516)
+Orientation complete. Angle: -2.83°
+State: APPROACHING, Distance: 1.5996m, Angle: -2.67°
+Robot at (0.420, 0.088), Target at (1.961, 0.516)
+Robot heading: 18.19°, Target bearing: 15.52°
+GPS Position: (0.464, 0.098, 0.093)
+Heading: 8.80° (0.15, 0.99)
+Total distance traveled: 0.07m
+Displacement from start: 0.07m
+Path efficiency: 96.7%
+Battery level: N/A
+WARNING: Possible oscillation in joint arm_5_joint
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+State: APPROACHING, Distance: 1.3022m, Angle: 12.50°
+Robot at (0.725, 0.107), Target at (1.961, 0.516)
+Robot heading: 5.82°, Target bearing: 18.32°
+Stopping to adjust arm at 1.28m
+Robot stabilized, starting arm adjustment
+Move Arm 3: Using target position from blackboard: [np.float64(1.9608198675667712), np.float64(0.5160793793029255), 0.8968897661828407]
+Move Arm 3: Target position: [np.float64(1.9608198675667712), np.float64(0.5160793793029255), 0.8968897661828407]
+Robot at (0.764, 0.112), angle 9.1°
+Target at (1.961, 0.516), distance: 1.263m
+Approach vector: 198.7°
+Calculated offsets: (-0.043, -0.014)
+Attempting IK for final target: [np.float64(1.918186679416249), np.float64(-0.09832240073018761), 0.8968897661828407]
+Initial joint positions (clamped): [0.0, 0.0, np.float64(0.2997449020543216), 0.0, np.float64(0.7000000772670628), np.float64(0.3999813207291224), np.float64(-1.4999869748028163), np.float64(1.7000048565380872), np.float64(-1.5000000001441733), np.float64(-3.182907946153287e-06), np.float64(3.1333628234937244e-06), 0.0, 0.0, np.float64(0.045), 0.0]
+IK solution found successfully
+Move Arm 3: Started arm movement with angles {'torso_lift_joint': np.float64(0.2997449020543216), 'arm_1_joint': np.float64(1.408384558734962), 'arm_2_joint': np.float64(-0.011117897947744485), 'arm_3_joint': np.float64(-1.5870308924308825), 'arm_4_joint': np.float64(0.15482893366441247), 'arm_5_joint': np.float64(-1.576406477149375), 'arm_6_joint': np.float64(0.5657078081498105), 'arm_7_joint': np.float64(-1.5850360092497147), 'gripper_right_finger_joint': np.float64(0.045)}
+Arm adjustment complete, continuing approach
+State: FINAL_APPROACH, Distance: 1.2290m, Angle: 6.95°
+Robot at (0.798, 0.118), Target at (1.961, 0.516)
+Robot heading: 11.93°, Target bearing: 18.89°
+GPS Position: (0.971, 0.171, 0.093)
+Heading: 19.06° (0.33, 0.95)
+Total distance traveled: 0.22m
+Displacement from start: 0.21m
+Path efficiency: 99.2%
+Battery level: N/A
+WARNING: Possible oscillation in joint arm_1_joint
+WARNING: Possible oscillation in joint arm_4_joint
+WARNING: Possible oscillation in joint arm_7_joint
+WARNING: Possible oscillation in joint wheel_left_joint
+WARNING: Possible oscillation in joint wheel_right_joint
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+Arrived at target, distance: 1.00m
+Grasp Object 3: Starting simplified grasp sequence
+Grasp Object 3: Contact detected: L=-16.00, R=-15.68
+Grasp Object 3: Grasp successful! L=-16.00, R=-16.00
+Grasp Object 3: Set grasp_success to True
+Grasp Object 3: Set grasp_success to True
+Starting lift sequence
+Arm moving to lift position
+Lift sequence completed
+Object securely held with forces: L=-11.07, R=-16.02
+Starting controlled backup after grasp
+Starting backup movement
+Backup complete, moved 0.123m
+Move to Table Waypoint 3: Starting navigation from [0.9029672682604719, 0.1465305808684218]
+Move to Table Waypoint 3: Waypoint sequence: [(1.0, -0.9, 0.095), (0.2, -1.5, 0.095)]
+GPS=(0.81, 0.13), heading=-4.3°, dist to WP=1.05
+GPS=(0.94, -0.26), heading=-84.7°, dist to WP=0.64
+GPS=(0.94, -0.27), heading=-84.8°, dist to WP=0.64
+GPS Position: (0.950, -0.335, 0.093)
+Heading: -84.91° (-1.00, 0.09)
+Total distance traveled: 0.74m
+Displacement from start: 0.53m
+Path efficiency: 71.3%
+Battery level: N/A
+WARNING: Possible oscillation in joint arm_7_joint
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+GPS=(0.97, -0.55), heading=-85.0°, dist to WP=0.35
+GPS=(0.97, -0.55), heading=-85.0°, dist to WP=0.35
+GPS=(0.98, -0.71), heading=-85.0°, dist to WP=0.20
+GPS=(0.98, -0.71), heading=-85.0°, dist to WP=0.19
+Reached waypoint: (1.0, -0.9, 0.095) (GPS: 0.99, -0.75)
+GPS=(0.90, -1.09), heading=-123.7°, dist to WP=0.81
+GPS=(0.89, -1.10), heading=-125.2°, dist to WP=0.80
+GPS Position: (0.687, -1.299, 0.093)
+Heading: -150.53° (-0.49, -0.87)
+Total distance traveled: 0.78m
+Displacement from start: 0.73m
+Path efficiency: 93.5%
+Battery level: N/A
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+GPS=(0.57, -1.35), heading=-157.8°, dist to WP=0.40
+GPS=(0.57, -1.35), heading=-157.9°, dist to WP=0.40
+GPS=(0.41, -1.42), heading=-158.4°, dist to WP=0.22
+Reached waypoint: (0.2, -1.5, 0.095) (GPS: 0.34, -1.44)
+Move to Table Waypoint 3: All waypoints reached!
+Setting torso_lift_joint to position 0.2
+Setting arm_1_joint to position 1.6
+Setting arm_2_joint to position 1.02
+Setting arm_3_joint to position 0
+Setting arm_4_joint to position 1.2
+Setting arm_5_joint to position 0.5
+Setting arm_6_joint to position 0
+Setting arm_7_joint to position -2.07
+Joint arm_1_joint at 0.7000, target: 1.6000, error: 0.9000
+Joint arm_2_joint at 0.4000, target: 1.0200, error: 0.6200
+Joint arm_3_joint at -1.5000, target: 0.0000, error: 1.5000
+Joint arm_4_joint at 1.7000, target: 1.2000, error: 0.5000
+Joint arm_5_joint at -1.5000, target: 0.5000, error: 2.0000
+Joint arm_7_joint at 0.0000, target: -2.0700, error: 2.0700
+Place Object 3 in progress... (1.2s elapsed)
+Joint arm_1_joint at 1.4488, target: 1.6000, error: 0.1512
+Joint arm_3_joint at -0.5975, target: 0.0000, error: 0.5975
+Joint arm_5_joint at -0.7513, target: 0.5000, error: 1.2513
+Joint arm_7_joint at -0.6758, target: -2.0700, error: 1.3942
+Place Object 3 in progress... (2.5s elapsed)
+Joint arm_5_joint at -0.0025, target: 0.5000, error: 0.5025
+Joint arm_7_joint at -1.3516, target: -2.0700, error: 0.7184
+GPS Position: (0.339, -1.446, 0.093)
+Heading: -158.40° (-0.37, -0.93)
+Total distance traveled: 0.11m
+Displacement from start: 0.10m
+Path efficiency: 97.5%
+Battery level: N/A
+WARNING: Possible oscillation in joint arm_1_joint
+WARNING: Possible oscillation in joint arm_2_joint
+WARNING: Possible oscillation in joint arm_3_joint
+WARNING: Possible oscillation in joint arm_5_joint
+WARNING: Possible oscillation in joint arm_7_joint
+WARNING: Possible oscillation in joint wheel_left_joint
+WARNING: Possible oscillation in joint wheel_right_joint
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+Place Object 3 in progress... (3.8s elapsed)
+Place Object 3 completed successfully.
+Open Gripper 3: Opening gripper to position 0.045
+Open Gripper 3: Gripper fully opened
+Open Gripper 3: Gripper open sequence complete
+Setting torso_lift_joint to position 0.3
+Setting arm_1_joint to position 0.71
+Setting arm_2_joint to position 1.02
+Setting arm_3_joint to position -2.815
+Setting arm_4_joint to position 1.011
+Setting arm_5_joint to position 0
+Setting arm_6_joint to position 0
+Setting arm_7_joint to position 0
+Setting gripper_left_finger_joint to position 0.045
+Setting gripper_right_finger_joint to position 0.045
+Setting head_1_joint to position 0
+Setting head_2_joint to position 0
+Joint arm_1_joint at 1.6000, target: 0.7100, error: 0.8900
+Joint arm_3_joint at -0.0000, target: -2.8150, error: 2.8150
+Joint arm_4_joint at 1.2000, target: 1.0110, error: 0.1890
+Joint arm_5_joint at 0.4999, target: 0.0000, error: 0.4999
+Joint arm_7_joint at -2.0503, target: 0.0000, error: 2.0503
+Joint head_2_joint at -0.2000, target: 0.0000, error: 0.2000
+Reset Arm For Home 3 in progress... (1.2s elapsed)
+Joint arm_1_joint at 0.8512, target: 0.7100, error: 0.1412
+Joint arm_3_joint at -0.9024, target: -2.8150, error: 1.9126
+Joint arm_7_joint at -1.3745, target: 0.0000, error: 1.3745
+Reset Arm For Home 3 in progress... (2.5s elapsed)
+Joint arm_3_joint at -1.8046, target: -2.8150, error: 1.0104
+Joint arm_7_joint at -0.6988, target: 0.0000, error: 0.6988
+Reset Arm For Home 3 in progress... (3.8s elapsed)
+Joint arm_3_joint at -2.7069, target: -2.8150, error: 0.1081
+Reset Arm For Home 3 timed out after 4.0 seconds, considering it complete
+Move to Home Waypoint 3: Starting navigation from [0.3398487458733034, -1.4447741840390733]
+Move to Home Waypoint 3: Waypoint sequence: [(0.3, 0.0, 0.095)]
+GPS=(0.02, -1.28), heading=94.7°, dist to WP=1.30
+GPS=(0.02, -1.26), heading=92.4°, dist to WP=1.29
+GPS=(0.13, -0.70), heading=76.3°, dist to WP=0.72
+GPS=(0.13, -0.69), heading=76.3°, dist to WP=0.71
+GPS Position: (0.153, -0.601, 0.093)
+Heading: 76.23° (0.97, 0.24)
+Total distance traveled: 1.12m
+Displacement from start: 0.86m
+Path efficiency: 77.4%
+Battery level: N/A
+Behavior Tree Status:
+{-} Root
+    {-} Initialization
+        --> Check Hardware Status
+        --> Move to Safe Position
+    {-} Handle Jar 1
+        {o} Find Object
+            --> Recognize Object 1
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 1
+            --> Move to Object 1
+        --> Grasp Object 1
+        {-} Transport and Place
+            --> StartTransport_1
+            --> Lift and Verify 1
+            --> Backup After Grasp 1
+            --> Move to Table Waypoint 1
+            --> Place Object 1
+            --> Open Gripper 1
+            --> Reset Arm For Home 1
+            --> Move to Home Waypoint 1
+    {-} Handle Jar 2
+        {o} Find Object
+            --> Recognize Object 2
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 2
+            --> Move to Object 2
+        --> Grasp Object 2
+        {-} Transport and Place
+            --> StartTransport_2
+            --> Lift and Verify 2
+            --> Backup After Grasp 2
+            --> Move to Table Waypoint 2
+            --> Place Object 2
+            --> Open Gripper 2
+            --> Reset Arm For Home 2
+            --> Move to Home Waypoint 2
+    {-} Handle Jar 3
+        {o} Find Object
+            --> Recognize Object 3
+            --> Comprehensive Scanner
+        {-} Approach Sequence
+            --> Prepare Arm for Approach 3
+            --> Move to Object 3
+        --> Grasp Object 3
+        {-} Transport and Place
+            --> StartTransport_3
+            --> Lift and Verify 3
+            --> Backup After Grasp 3
+            --> Move to Table Waypoint 3
+            --> Place Object 3
+            --> Open Gripper 3
+            --> Reset Arm For Home 3
+            --> Move to Home Waypoint 3
+GPS=(0.21, -0.39), heading=76.2°, dist to WP=0.40
+GPS=(0.21, -0.38), heading=76.2°, dist to WP=0.39
+GPS=(0.25, -0.21), heading=76.2°, dist to WP=0.22
+GPS=(0.25, -0.21), heading=76.2°, dist to WP=0.22
+Reached waypoint: (0.3, 0.0, 0.095) (GPS: 0.26, -0.15)
+Move to Home Waypoint 3: All waypoints reached!
+Behavior tree completed successfully
+INFO: 'final_controller' controller exited successfully.

@@ -1,0 +1,5 @@
+numpy~=2.2.4
+py_trees~=2.3.0
+urdf_parser_py~=0.0.4
+ikpy~=3.4.2
+psutil~=7.0.0
