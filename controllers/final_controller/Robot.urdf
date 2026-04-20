@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="tiago" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="TIAGo" xmlns:xacro="http://ros.org/wiki/xacro">
   <link name="base_link">
     <visual>
       <origin xyz="0 0 0.06" rpy="0 0 0"/>
@@ -1005,6 +1005,13 @@
       </geometry>
     </collision>
   </link>
+  <link name="active_connector">
+  </link>
+  <joint name="front_active_connector_joint" type="fixed">
+    <parent link="front"/>
+    <child link="active_connector"/>
+    <origin xyz="0 0 -0.12" rpy="0 0 0"/>
+  </joint>
   <joint name="gripper_left_finger_joint" type="prismatic">
     <parent link="front"/>
     <child link="gripper_left_finger_link"/>

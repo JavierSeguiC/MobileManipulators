@@ -4,7 +4,8 @@ EXTERNPROTO "Astra.proto"
 EXTERNPROTO "TiagoBase.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/pal_robotics/tiago_extensions/protos/TiagoBody.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/pal_robotics/tiago_extensions/protos/TiagoFrontArm.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/pal_robotics/tiago_extensions/protos/TiagoGripper.proto"
+#EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/pal_robotics/tiago_extensions/protos/TiagoGripper.proto"
+EXTERNPROTO "TiagoGripper.proto"
 
 PROTO Tiago [
   field  SFVec3f     translation      0 0 0.095
@@ -14,7 +15,7 @@ PROTO Tiago [
   field  MFString    controllerArgs   []
   field  SFString    window           "<generic>"
   field  SFString    customData       ""
-  field  SFBool      supervisor       FALSE
+  field  SFBool      supervisor       TRUE
   field  SFBool      synchronization  TRUE
   field  SFBool      selfCollision    FALSE
   field  SFNode      endEffectorSlot  TiagoGripper {}
