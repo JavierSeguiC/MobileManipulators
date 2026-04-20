@@ -35,8 +35,8 @@ WorldInfo {
 }
 Viewpoint {
   fieldOfView 1.1
-  orientation 0.6184606388975287 -0.5485856479028121 -0.5626368500636201 4.270635774422386
-  position -0.2011565508384936 -1.0369231327384991 10.883684844581648
+  orientation 0.6223292611772603 -0.5408176035240524 -0.5658821523966507 4.2582277363447325
+  position -1.0589425045427026 -2.359205999469556 7.138376330345784
   exposure 0.7999999999999999
 }
 TexturedBackground {
@@ -47,57 +47,10 @@ TexturedBackground {
   ]
 }
 Tiago {
-  hidden position_0_0 -2.9506522744026145e-06
-  hidden position_0_1 2.9452872050592424e-06
-  hidden position_0_2 -0.0005297995449691228
-  hidden position_0_3 -0.0013428427949140342
-  hidden position_0_4 -0.0018711641531288237
-  hidden position_0_5 -0.0026845258673651173
-  hidden position_1_0 -0.000255607056108142
-  hidden translation_2 0 0 0.5997443929438918
-  hidden position_2_0 0.6079447058866609
-  hidden position_3_0 0.07092589275097602
-  hidden translation_4 0.02509999999972542 0.1939999925892751 -0.171
-  hidden rotation_4 0 0 1 0.009925892750805635
-  hidden position_4_0 -3.375454103929776e-05
-  hidden rotation_5 0.9999999997151587 1.687720852288167e-05 -1.687727051644399e-05 1.5708000002848412
-  hidden position_5_0 4.3565709135284694e-05
-  hidden rotation_6 -0.5774253183327234 -0.5773001653030642 0.5773253163420151 2.0944851557608737
-  hidden position_6_0 1.3114871934213476e-05
-  hidden rotation_7 -0.57735531709905 -0.5773477452290682 -0.5773477452076577 2.094392428141709
-  hidden position_7_0 1.0396906603485933e-05
-  hidden rotation_8 -5.198434206699186e-06 -0.9999999999729763 5.198453301649314e-06 1.5708000000270235
-  hidden position_8_0 -3.394572568362088e-06
-  hidden rotation_9 -0.5773489626198822 -0.5773509224706179 -0.5773509224761596 2.094401959858495
-  hidden position_9_0 3.170432874194947e-06
-  hidden rotation_10 0.5773508793352992 0.5773490488911688 0.577350879340475 2.0944018304512406
-  hidden position_12_0 -1.0794557249257768e-06
-  hidden position_12_1 1.0794563987305875e-06
-  hidden translation_33 1.0794557249257768e-06 0 0
-  hidden translation_35 1.0794563987305875e-06 0 0
-  hidden rotation_36 0 0 1 0.6079447058866606
-  hidden position_36_0 -0.49998753166298027
-  hidden rotation_37 0.9405578530036643 0.24015672116925024 -0.24015760331576436 1.6320437907101135
-  hidden translation_49 3.645427254506117e-08 -6.800480001345477e-08 0.029995947845844903
-  hidden rotation_49 0.9900733665993461 0.13684806221409554 0.03205209226998889 4.767954670706302e-11
-  hidden rotation_53 0.9999999999978236 -1.475320718033624e-06 1.4753261371991668e-06 1.5708000000021756
-  hidden rotation_54 0.9999999999978313 1.4726381932154304e-06 -1.472643602527493e-06 1.5708000000021687
-  hidden rotation_55 0 0 -1 0.0005297995446450568
-  hidden position_55_0 -0.00026509163068233477
-  hidden rotation_56 -0.9999999824316717 -0.00013254532692169926 -0.00013254581378876467 1.5708000175683285
-  hidden rotation_57 0 0 -1 0.0013428427948565136
-  hidden position_57_0 1.1516896033701937e-05
-  hidden rotation_58 -0.9999999999668403 5.758426864801878e-06 5.75844801672367e-06 1.5708000000331597
-  hidden rotation_59 0 0 -1 0.0018711641531300525
-  hidden position_59_0 0.00023470565348597072
-  hidden rotation_60 -0.9999999862283648 0.00011735239460535396 0.00011735282566556047 1.5708000137716354
-  hidden rotation_61 0 0 -0.9999999999999999 0.002684525867405384
-  hidden position_61_0 0.0005129327176870168
-  hidden rotation_62 -0.999999934225252 0.000256465405545756 0.00025646634759752244 1.5708000657747492
-  translation -0.750793 0.551321 0.052543
-  rotation -0.003856480583582739 -0.012838101942728488 -0.9999101513116149 1.57085
+  translation -0.93 -3.14 0.095
+  rotation 0 0 1 1.57085
   name "tiago"
-  controller "manipulation_controller"
+  controller "final_controller"
   cameraSlot [
     Display {
       name "map_display"
@@ -900,7 +853,7 @@ Solid {
             dampingConstant 5
           }
           endPoint Solid {
-            translation -9.927429392537605e-07 2.4762691896995648e-12 0
+            translation -9.927429392537605e-07 2.4762969452751804e-12 0
             rotation 0 0 -1 4.988663079424227e-06
             children [
               Solid {
@@ -2036,7 +1989,7 @@ Solid {
             dampingConstant 5
           }
           endPoint Solid {
-            translation -1.5406464084736148e-06 -5.421718629605721e-12 0
+            translation -1.5406464084736144e-06 -5.421774140756952e-12 0
             rotation 0 0 1 7.038145126634325e-06
             children [
               Solid {
@@ -2234,7 +2187,7 @@ Solid {
             dampingConstant 5
           }
           endPoint Solid {
-            translation -1.5406463878946768e-06 -5.421718629605721e-12 0
+            translation -1.5406463878946764e-06 -5.421774140756952e-12 0
             rotation 0 0 1 7.038145126634325e-06
             children [
               Solid {
@@ -3370,7 +3323,7 @@ Solid {
             dampingConstant 5
           }
           endPoint Solid {
-            translation -1.5406050502195707e-06 -5.421385562698333e-12 0
+            translation -1.5406050502195704e-06 -5.421413318273949e-12 0
             rotation 0 0 1 7.037955831653634e-06
             children [
               Solid {
@@ -3568,7 +3521,7 @@ Solid {
             dampingConstant 5
           }
           endPoint Solid {
-            translation -1.5409329518443726e-06 5.4235227420207366e-12 0
+            translation -1.5409329518443732e-06 5.42343947529389e-12 0
             rotation 0 0 -1 7.039406963087199e-06
             children [
               Solid {
@@ -3766,7 +3719,7 @@ Solid {
             dampingConstant 5
           }
           endPoint Solid {
-            translation -1.5409329518441036e-06 5.4235227420207366e-12 0
+            translation -1.540932951844104e-06 5.42343947529389e-12 0
             rotation 0 0 -1 7.039406963087199e-06
             children [
               Solid {
@@ -4809,7 +4762,7 @@ Solid {
             dampingConstant 5
           }
           endPoint Solid {
-            translation -1.5406050502209755e-06 -5.421385562698333e-12 0
+            translation -1.5406050502209752e-06 -5.421413318273949e-12 0
             rotation 0 0 1 7.037955831653634e-06
             children [
               Solid {
@@ -5666,7 +5619,7 @@ Solid {
             dampingConstant 5
           }
           endPoint Solid {
-            translation -0.0023382357414800897 -1.1691399703722682e-05 0
+            translation -0.0023382357414800914 -1.1691399703556149e-05 0
             rotation 0 0 1 0.010000105691649311
             children [
               Solid {
@@ -5864,7 +5817,7 @@ Solid {
             dampingConstant 5
           }
           endPoint Solid {
-            translation 0.0042337240491291585 3.833184786664057e-05 0
+            translation 0.004233724049129157 3.8331847866779345e-05 0
             rotation 0 0 1 0.018107368393559958
             children [
               Solid {
@@ -6062,7 +6015,7 @@ Solid {
             dampingConstant 5
           }
           endPoint Solid {
-            translation -8.406703844810882e-07 -2.088967887559079e-12 0
+            translation -8.406703844810884e-07 -2.0889123764078477e-12 0
             rotation 0 0 0.9999999999999999 4.969933787473752e-06
             children [
               Solid {
@@ -7105,7 +7058,7 @@ Solid {
             dampingConstant 5
           }
           endPoint Solid {
-            translation -2.320466357967379e-06 1.0021428131778976e-11 0
+            translation -2.3204663579673797e-06 1.0021372620627744e-11 0
             rotation 0 0 -1 8.637482218592799e-06
             children [
               Solid {
@@ -7302,7 +7255,7 @@ Solid {
             dampingConstant 5
           }
           endPoint Solid {
-            translation -1.471552527312917e-06 5.061395746963626e-12 0
+            translation -1.4715525273129165e-06 5.061479013690473e-12 0
             rotation 0 0 -1 6.878851175013929e-06
             children [
               Solid {
@@ -7499,7 +7452,7 @@ Solid {
             dampingConstant 5
           }
           endPoint Solid {
-            translation -1.4715525273996376e-06 -5.061395746963626e-12 0
+            translation -1.4715525273996372e-06 -5.061479013690473e-12 0
             rotation 0 0 1 6.878851175013929e-06
             children [
               Solid {
@@ -10859,8 +10812,6 @@ Solid {
   model "wall"
 }
 Door {
-  hidden translation_5 0.0010709702026994172 2.225640872405288e-05 -1.5543122344752192e-15
-  hidden rotation_5 0 0 -1 0.00014940745114065635
   translation -2.25 -1.45 0
   position -0.000149407452486372
 }
