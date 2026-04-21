@@ -9,4 +9,4 @@ textFiles: -1
 consoles: Console:All:All
 renderingDevicePerspectives: tiago:Astra depth;0;0.895833;0;0
 renderingDevicePerspectives: tiago:Astra rgb;0;0.895833;0;0
-renderingDevicePerspectives: tiago:map_display;0;1.27261;0.665988;0.0590909;1096;134;290;290;0
+renderingDevicePerspectives: tiago:map_display;1;1.27261;0.665988;0.0590909
