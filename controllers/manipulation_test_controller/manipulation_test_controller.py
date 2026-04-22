@@ -51,6 +51,21 @@ planning_position = {
     "head_2_joint": 0       # Tilted down to look at the table
 }
 
+manipulation_position = {
+    "torso_lift_joint": 0.35,  # Suitable height for manipulation
+    'arm_1_joint': 0.07, 
+    'arm_2_joint': 0.7,
+    'arm_3_joint': -1.45, 
+    'arm_4_joint': 1.4, 
+    'arm_5_joint': 0.6,
+    'arm_6_joint': 0, 
+    'arm_7_joint': 0, 
+    'gripper_left_finger_joint': 0.045,
+    'gripper_right_finger_joint': 0.045, 
+    'head_1_joint': 0, 
+    "head_2_joint": -0.5       # Look down   
+}
+
 def create_behavior_tree(robot):
     """Creates a simplified sequence just for testing manipulation."""
     root = py_trees.composites.Sequence(f"Test Sequence: {TEST_MODE}", memory=True)
@@ -77,7 +92,7 @@ def create_behavior_tree(robot):
         
         # Execution
         pick_test_seq.add_children([
-            # MoveArmJointsForwardKinematics("Adjust Height for Manipulation", robot, manipulation_position),
+            MoveArmJointsForwardKinematics("Adjust Height for Manipulation", robot, manipulation_position),
             MoveArmTrajectoryRRT(
                 name="Approach Object",
                 robot=robot,

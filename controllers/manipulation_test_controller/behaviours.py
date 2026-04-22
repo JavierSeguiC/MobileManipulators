@@ -100,7 +100,7 @@ class MoveArmTrajectoryRRT(py_trees.behaviour.Behaviour):
             self.current_path_target_angles = []
             for waypoint in path:
                 target_angles = self.robot.ik_chain.calculate_inverse_kinematics(
-                    waypoint, [0, 0, 1], orientation_mode="Z"
+                    waypoint, [0, 0, 0], orientation_mode="Z"
                 )
                 if not target_angles:
                     print(f"{self.name}: Failed to calculate IK solution for waypoint. Aborting.")
@@ -314,8 +314,35 @@ class ObjectSelector(py_trees.behaviour.Behaviour):
 
             print(f"{self.name}: Object selected! -> {self.object_name}")
             
-            # Publish selected object position and name to the blackboard for other behaviors
-            self.blackboard.set("target_position", self.target_position)
+            # 1. Get the robot's current state in the world
+            gps_vec = self.robot.gps.getValues()
+            compass_vec = self.robot.compass.getValues()
+
+            robot_x = gps_vec[0]
+            robot_y = gps_vec[1]
+            # Get yaw (0 is East, 90 is North in standard Webots ENU)
+            yaw = math.atan2(compass_vec[0], compass_vec[1]) 
+
+            # 2. Get your object's global target position (assuming you have this)
+            target_world_x = filtered_objs[0][0][0]  
+            target_world_y = filtered_objs[0][0][1]  
+            target_world_z = filtered_objs[0][0][2]  
+
+            # 3. Calculate the difference in the world frame
+            dx = target_world_x - robot_x
+            dy = target_world_y - robot_y
+
+            # 4. Transform into the Robot's LOCAL frame using a 2D rotation matrix
+            local_x = dx * math.cos(yaw) + dy * math.sin(yaw)
+            local_y = -dx * math.sin(yaw) + dy * math.cos(yaw)
+
+            # Z usually stays the same if your robot base is at Z=0, 
+            # otherwise subtract the robot's base elevation
+            local_z = target_world_z 
+
+            # 5. NOW save the LOCAL coordinates to the blackboard
+            local_target = [local_x, local_y, local_z]
+            self.blackboard.set("target_position", local_target)
             self.blackboard.set("object_name", self.object_name)
             
             # Remove selected object from the list
