@@ -36,11 +36,17 @@ class MoveArmTrajectoryRRT(py_trees.behaviour.Behaviour):
         self.current_phase = 0
         self.blackboard = py_trees.blackboard.Blackboard()
 
-    def initialise(self):
+    def initialise(self): #changes to this function
         # Reset variables for a new execution
         self.movement_complete = False
         self.start_time = self.robot.get_time()
         self.current_phase = 0
+        
+        # --- NEW: State variables for non-blocking execution ---
+        # Stores the pre-calculated IK angles for the current path
+        self.current_path_target_angles = None 
+        # Tracks which waypoint the arm is currently moving towards
+        self.current_waypoint_index = 0
             
         print(f"{self.name}: Initializing RRT trajectory planning...")
 
@@ -54,52 +60,72 @@ class MoveArmTrajectoryRRT(py_trees.behaviour.Behaviour):
             print(f"{self.name}: Timed out after {self.timeout} seconds.")
             return py_trees.common.Status.FAILURE
 
-        # --- FASE RRT ---
-        base_target = None
-        if self.use_target_from_blackboard:
-            base_target = self.blackboard.get("target_position")
-            if base_target is None:
-                print(f"{self.name}: Waiting for \"target_position\" on blackboard...")
-                return py_trees.common.Status.RUNNING
-        elif self.fixed_target is not None:
-            base_target = self.fixed_target
-        else:
-            print(f"{self.name}: ERROR - No target provided.")
-            return py_trees.common.Status.FAILURE
-
-        base_target = np.array(base_target)
-
-        current_offset = np.array(self.offsets[self.current_phase])
-        goal_pos = base_target + current_offset
-        
-        current_joint_positions = self.robot.read_torso_and_arm_joints()
-        current_end_effector_pos = self.robot.ik_chain.calculate_forward_kinematics(current_joint_positions)
-        
-        print(f"{self.name}: Planning RRT to phase {self.current_phase + 1}/{len(self.offsets)} (Goal: {goal_pos})")
-        path = self.robot.planner.run_rrt_with_obstacles(
-            x_init = tuple(current_end_effector_pos), 
-            x_goal = tuple(goal_pos),
-            headless = True
-        )
-
-        if not path:
-            print(f"{self.name}: RRT Planner failed to find a path.")
-            return py_trees.common.Status.FAILURE
-
-        target_angles = {}
-        for waypoint in path:
-            target_angles = self.robot.ik_chain.calculate_inverse_kinematics(
-                waypoint, [0, 0, 1], orientation_mode="Z"
-            )
-            if not target_angles:
-                print(f"{self.name}: Failed to calculate IK solution for waypoint.")
+        # ==========================================
+        # STEP 1: PATH PLANNING (Runs ONCE per Phase)
+        # ==========================================
+        if self.current_path_target_angles is None:
+            base_target = None
+            if self.use_target_from_blackboard:
+                base_target = self.blackboard.get("target_position")
+                if base_target is None:
+                    print(f"{self.name}: Waiting for \"target_position\" on blackboard...")
+                    return py_trees.common.Status.RUNNING
+            elif self.fixed_target is not None:
+                base_target = self.fixed_target
+            else:
+                print(f"{self.name}: ERROR - No target provided.")
                 return py_trees.common.Status.FAILURE
 
-            for joint, angle in target_angles.items():
-                self.robot.set_joint_position(joint, angle)
+            base_target = np.array(base_target)
+            current_offset = np.array(self.offsets[self.current_phase])
+            goal_pos = base_target + current_offset
             
-            self.robot.step(200)  
+            current_joint_positions = self.robot.read_torso_and_arm_joints()
+            current_end_effector_pos = self.robot.ik_chain.calculate_forward_kinematics(current_joint_positions)
             
+            print(f"{self.name}: Planning RRT to phase {self.current_phase + 1}/{len(self.offsets)} (Goal: {goal_pos})")
+            
+            # Plan the path
+            path = self.robot.planner.run_rrt_with_obstacles(
+                x_init = tuple(current_end_effector_pos), 
+                x_goal = tuple(goal_pos),
+                headless = True
+            )
+
+            if not path:
+                print(f"{self.name}: RRT Planner failed to find a path.")
+                return py_trees.common.Status.FAILURE
+
+            # Calculate IK for the ENTIRE path right now, and store it.
+            self.current_path_target_angles = []
+            for waypoint in path:
+                target_angles = self.robot.ik_chain.calculate_inverse_kinematics(
+                    waypoint, [0, 0, 1], orientation_mode="Z"
+                )
+                if not target_angles:
+                    print(f"{self.name}: Failed to calculate IK solution for waypoint. Aborting.")
+                    return py_trees.common.Status.FAILURE
+                
+                self.current_path_target_angles.append(target_angles)
+            
+            self.current_waypoint_index = 0 # Start at the first waypoint
+            
+            # Yield control back to Webots so the simulation can step!
+            return py_trees.common.Status.RUNNING 
+
+
+        # ==========================================
+        # STEP 2: PATH EXECUTION (Runs EVERY TICK)
+        # ==========================================
+        
+        # Grab the target angles for the specific waypoint we are currently trying to reach
+        target_angles = self.current_path_target_angles[self.current_waypoint_index]
+        
+        # Send the commands to the simulated motors
+        for joint, angle in target_angles.items():
+            self.robot.set_joint_position(joint, angle)
+
+        # Check if the robot's physical joints have reached this specific waypoint
         all_in_place = True
         for joint, target_angle in target_angles.items():
             current_angle = self.robot.get_joint_position(joint)
@@ -108,14 +134,27 @@ class MoveArmTrajectoryRRT(py_trees.behaviour.Behaviour):
                 all_in_place = False
                 break
 
+        # If the arm has reached the current waypoint...
         if all_in_place:
-            print(f"{self.name}: Reached phase {self.current_phase + 1} target.")
-            self.current_phase += 1
+            # ...target the next waypoint in the list for the next tick
+            self.current_waypoint_index += 1
             
-            if self.current_phase >= len(self.offsets):
-                self.movement_complete = True
-                return py_trees.common.Status.SUCCESS
+            # Check if we have finished all waypoints for this Phase
+            if self.current_waypoint_index >= len(self.current_path_target_angles):
+                print(f"{self.name}: Reached phase {self.current_phase + 1} target.")
+                
+                # Advance to the next phase (e.g., from pre-grasp to grasp)
+                self.current_phase += 1
+                
+                # Clear the path so the RRT plans a new one on the next tick
+                self.current_path_target_angles = None 
+                
+                # If we have completed all offset phases, the behavior is done!
+                if self.current_phase >= len(self.offsets):
+                    self.movement_complete = True
+                    return py_trees.common.Status.SUCCESS
 
+        # The robot is still moving towards a waypoint
         return py_trees.common.Status.RUNNING
     
 

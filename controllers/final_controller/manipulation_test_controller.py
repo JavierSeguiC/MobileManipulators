@@ -18,7 +18,7 @@ from behaviours import (
 # ==========================================
 # Change this variable to test different parts of the manipulation pipeline.
 # Options: "PICK", "PLACE", or "BOTH"
-TEST_MODE = "PLACE"  
+TEST_MODE = "PICK"  
 
 # ==========================================
 # PREDEFINED POSITIONS
@@ -51,16 +51,11 @@ planning_position = {
     "head_2_joint": 0       # Tilted down to look at the table
 }
 
-# The position the robot shifts to right BEFORE computing the RRT path to grab
-manipulation_position = {
-    "torso_lift_joint": 0.35,  # ADJUST THIS: Tweak height for perfect reaching
-    "head_2_joint": -0.5       # Reset head slightly so it doesn't collide
-}
-
 def create_behavior_tree(robot):
     """Creates a simplified sequence just for testing manipulation."""
     root = py_trees.composites.Sequence(f"Test Sequence: {TEST_MODE}", memory=True)
 
+    """
     # 1. Initialization (Always runs)
     init_seq = py_trees.composites.Sequence("Initialization", memory=True)
     init_seq.add_children([
@@ -68,6 +63,7 @@ def create_behavior_tree(robot):
         MoveArmJointsForwardKinematics("Initial Safe Position", robot, starting_position)
     ])
     root.add_child(init_seq)
+    """
 
     # 2. PICK SEQUENCE
     if TEST_MODE in ["PICK", "BOTH"]:
@@ -75,14 +71,13 @@ def create_behavior_tree(robot):
         
         # Perception
         pick_test_seq.add_children([
-            MoveArmJointsForwardKinematics("Move to Planning Position", robot, planning_position),
             EnhancedObjectRecognizer("Recognize Objects", robot, timeout=60.0),
             ObjectSelector("Select Object", robot)
         ])
         
         # Execution
         pick_test_seq.add_children([
-            MoveArmJointsForwardKinematics("Adjust Height for Manipulation", robot, manipulation_position),
+            # MoveArmJointsForwardKinematics("Adjust Height for Manipulation", robot, manipulation_position),
             MoveArmTrajectoryRRT(
                 name="Approach Object",
                 robot=robot,
@@ -99,9 +94,6 @@ def create_behavior_tree(robot):
         place_test_seq = py_trees.composites.Sequence("Test Place", memory=True)
         
         place_test_seq.add_children([
-            # Optional: Adjust height if needed before dropping
-            # MoveArmJointsForwardKinematics("Adjust Height for Drop", robot, manipulation_position),
-            
             MoveArmTrajectoryRRT(
                 name="Move to Drop Position",
                 robot=robot,
@@ -122,7 +114,7 @@ def main():
     print(f"Initializing Manipulation Tester in {TEST_MODE} mode...")
     robot = TiagoRobot("tiago_kitchen_finalproject.wbt") 
     
-    monitor = RuntimeMonitor(robot_instance=robot, log_interval=10.0)
+    #monitor = RuntimeMonitor(robot_instance=robot, log_interval=10.0)
     
     bt = create_behavior_tree(robot)
     bt.setup(timeout=15)
@@ -130,7 +122,7 @@ def main():
 
     print("Starting execution...")
     while robot.supervisor.step(robot.timestep) != -1:
-        monitor.update()
+        #monitor.update()
         bt.tick()
         
         if bt.root.status == py_trees.common.Status.SUCCESS:

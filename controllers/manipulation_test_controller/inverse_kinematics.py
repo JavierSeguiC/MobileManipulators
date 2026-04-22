@@ -135,7 +135,7 @@ class InverseKinematics:
             target_position[1] + offset_y,
             target_position[2] 
         ]
-        print(f"Attempting IK for final target: {final_target}")
+        print(f"Attempting IK for final target: {[f'{x:.2f}' for x in final_target]}")
 
         # Gather and clamp initial joint positions
         initial_position = [
@@ -144,8 +144,7 @@ class InverseKinematics:
         ]
 
         initial_position = self.clamp_joint_angles(initial_position)  # Clamp to joint limits
-        print(f"Initial joint positions (clamped): {initial_position}")
-
+        print(f"Initial joint positions (clamped): {[f'{x:.2f}' for x in initial_position]}")
         # Perform the IK calculation
         try:
             ik_results = self.chain.inverse_kinematics(
