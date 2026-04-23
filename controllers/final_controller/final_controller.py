@@ -17,7 +17,7 @@ from behaviours import (
 
 # Constants/Targets
 TARGETS = {
-    "green_basket": {"x": -1.12, "y": 0.42, "heading": math.radians(89.02)},
+    "green_basket": {"x": -1.12, "y": 0.32, "heading": math.radians(89.02)},
     "nocilla": {"x": 0.74, "y": -0.15, "heading": math.radians(0)},
     "nutella": {"x": 0.28, "y": -1.63, "heading": math.radians(-137.53)},
     "home": {"x": -0.93, "y": -3.14, "heading": math.radians(1.57)}
@@ -37,33 +37,6 @@ starting_position = {
     'head_1_joint': 0, 
     'head_2_joint': 0
 }
-"""
-starting_position = {
-    'torso_lift_joint': 0.35, 
-    'arm_1_joint': 0.07, 
-    'arm_2_joint': 0.7,
-    'arm_3_joint': -1.45, 
-    'arm_4_joint': 1.4, 
-    'arm_5_joint': 0.6,
-    'arm_6_joint': 0, 
-    'arm_7_joint': 0, 
-    'gripper_left_finger_joint': 0.045,
-    'gripper_right_finger_joint': 0.045, 
-    'head_1_joint': 0, 
-    'head_2_joint': -0.5
-}
-"""
-"""
-planning_position = {
-    "torso_lift_joint": 0.35,
-    "arm_1_joint": 1.20,
-    "arm_2_joint": 1.02,
-    "arm_3_joint": 0.29,
-    "arm_4_joint": 1.12,
-    "arm_5_joint": 1.71,
-    "arm_6_joint": -1.39,
-    "arm_7_joint": 1.53
-}"""
 
 manipulation_position = {
     "torso_lift_joint": 0.35,  
@@ -144,7 +117,8 @@ def create_behavior_tree(robot):
             OpenGripper("Drop Object", robot),
             MoveArmJointsForwardKinematics("Return Arm to Safe Pos", robot, starting_position)
         ])
-        """ Removed from place sequence
+        """ 
+        Removed from place sequence
             MoveArmTrajectoryRRT(
                 name="Move to Drop Position",
                 robot=robot,

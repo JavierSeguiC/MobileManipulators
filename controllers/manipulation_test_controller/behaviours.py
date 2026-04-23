@@ -912,36 +912,6 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
         compass = self.webots_robot.getDevice("compass")
         compass.enable(timestep)
 
-        """Configuration is done in the final_controller, we will delete this
-        
-        # Initial arm configuration
-        initial_pose = {
-            'torso_lift_joint': 0.3, 'arm_1_joint': 0.71, 'arm_2_joint': 1.02,
-            'arm_3_joint': -2.815, 'arm_4_joint': 1.011, 'arm_5_joint': 0,
-            'arm_6_joint': 0, 'arm_7_joint': 0,
-            'gripper_left_finger_joint': 0.045, 'gripper_right_finger_joint': 0.045,
-            'head_1_joint': 0, 'head_2_joint': 0
-        }
-        
-        print("Moving the robot arm to the initial pose...")
-        for joint_name, position in initial_pose.items():
-            try:
-                self.robot.set_joint_position(joint_name, position)
-            except Exception as e:
-                print(f"Warning: Could not initialize motor/sensor '{joint_name}': {e}")
-
-        while self.robot.step(timestep) != -1:
-            all_joints_in_position = True
-            for joint_name, target_pos in initial_pose.items():
-                current_pos = self.robot.get_joint_position(joint_name)
-                if abs(current_pos - target_pos) > ARM_POSITION_TOLERANCE:
-                    all_joints_in_position = False
-                    break
-            if all_joints_in_position:
-                print("Arm is in position")
-                break
-        """
-
         print(f"{self.name}: Initializing navigation to {self.target_dict}...")
         self.phase = "PLANNING"
         
@@ -967,7 +937,7 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
         map_.type_map[:, :] = TYPES.FREE
         map_.type_map[img < 128] = TYPES.OBSTACLE
 
-        inflate_radius_m = 0.45
+        inflate_radius_m = 0.35
         inflate_radius_px = int(np.ceil(inflate_radius_m / MAP_RESOLUTION))
         map_.inflate_obstacles(radius=inflate_radius_px)
         print(f"Obstacles inflated by {inflate_radius_px} pixels.")

@@ -896,7 +896,6 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
         # webots_robot is of the Robot class (from Webots), and we use it to access devices
         
         timestep = int(self.robot.timestep)
-        dt_sec = timestep / 1000.0  # dt in seconds for the PI controller
 
         # Robot wheels (actuators)
         left_motor = self.webots_robot.getDevice("wheel_left_joint")
@@ -911,36 +910,6 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
         gps.enable(timestep)
         compass = self.webots_robot.getDevice("compass")
         compass.enable(timestep)
-
-        """Configuration is done in the final_controller, we will delete this
-        
-        # Initial arm configuration
-        initial_pose = {
-            'torso_lift_joint': 0.3, 'arm_1_joint': 0.71, 'arm_2_joint': 1.02,
-            'arm_3_joint': -2.815, 'arm_4_joint': 1.011, 'arm_5_joint': 0,
-            'arm_6_joint': 0, 'arm_7_joint': 0,
-            'gripper_left_finger_joint': 0.045, 'gripper_right_finger_joint': 0.045,
-            'head_1_joint': 0, 'head_2_joint': 0
-        }
-        
-        print("Moving the robot arm to the initial pose...")
-        for joint_name, position in initial_pose.items():
-            try:
-                self.robot.set_joint_position(joint_name, position)
-            except Exception as e:
-                print(f"Warning: Could not initialize motor/sensor '{joint_name}': {e}")
-
-        while self.robot.step(timestep) != -1:
-            all_joints_in_position = True
-            for joint_name, target_pos in initial_pose.items():
-                current_pos = self.robot.get_joint_position(joint_name)
-                if abs(current_pos - target_pos) > ARM_POSITION_TOLERANCE:
-                    all_joints_in_position = False
-                    break
-            if all_joints_in_position:
-                print("Arm is in position")
-                break
-        """
 
         print(f"{self.name}: Initializing navigation to {self.target_dict}...")
         self.phase = "PLANNING"
@@ -963,11 +932,10 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
         #using logic from path planning, inflate radius reduced 0.5 -> 0.45
         print("Inflating grid map...")
         map_ = Grid(bounds=[[0, width], [0, height]])
-
         map_.type_map[:, :] = TYPES.FREE
         map_.type_map[img < 128] = TYPES.OBSTACLE
 
-        inflate_radius_m = 0.45
+        inflate_radius_m = 0.35
         inflate_radius_px = int(np.ceil(inflate_radius_m / MAP_RESOLUTION))
         map_.inflate_obstacles(radius=inflate_radius_px)
         print(f"Obstacles inflated by {inflate_radius_px} pixels.")
@@ -976,13 +944,22 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
         print("Beginning path planning")
         current_target = self.target_dict
         GOAL_WORLD = np.array([current_target["x"], current_target["y"]])
-        TARGET_HEADING = current_target["heading"]
 
         gps_vec = self.webots_robot.getDevice("gps").getValues()
         start_world = np.array([gps_vec[0], gps_vec[1]]) 
         
         start_map = world_to_map_coords(start_world, MAP_ORIGIN, MAP_RESOLUTION)
         goal_map = world_to_map_coords(GOAL_WORLD, MAP_ORIGIN, MAP_RESOLUTION)
+
+        # In case the robot starts inside an obstacle, clear a small area around the start position to find a valid path
+        clear_radius_px = int(np.ceil(inflate_radius_m + 0.05 / MAP_RESOLUTION)) # slightly larger than inflation
+        for dx in range(-clear_radius_px, clear_radius_px + 1):
+            for dy in range(-clear_radius_px, clear_radius_px + 1):
+                # Check if within circle
+                if dx*dx + dy*dy <= clear_radius_px*clear_radius_px: 
+                    nx, ny = start_map[0] + dx, start_map[1] + dy
+                    if 0 <= nx < width and 0 <= ny < height:
+                        map_.type_map[nx, ny] = TYPES.FREE
 
         map_.type_map[start_map] = TYPES.START
         map_.type_map[goal_map] = TYPES.GOAL
@@ -1005,16 +982,6 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
             self.phase = "FOLLOWING"
             print(f"Path found! {len(path)} points. FOLLOWING")
 
-        """
-        if path:
-            self.trajectory = Trajectory(path_world[:, 0], path_world[:, 1], look_ahead_dist=L)
-            self.PI_angular = PI(dt=self.robot.timestep/1000.0, kp=PI_KP, ki=PI_KI)
-            self.phase = "FOLLOWING"
-            print(f"{self.name}: Path planned. Following...")
-        else:
-            self.phase = "FAILED" 
-        """
-
     def update(self):
         if self.phase == "FAILED":
             return py_trees.common.Status.FAILURE
@@ -1033,7 +1000,14 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
             
             target_pt = self.trajectory.getTargetPoint(curr_pos)
             target_yaw = math.atan2(target_pt[1] - curr_pos[1], target_pt[0] - curr_pos[0])
-            self._apply_control(normalize_angle(target_yaw - yaw), TARGET_VELOCITY)
+
+            # Calculate error
+            yaw_error = normalize_angle(target_yaw - yaw)
+            if abs(yaw_error) > 0.5: # ~30 degrees. If error is large, STOP and turn in place
+                self._apply_control(yaw_error, 0.0)
+            else:
+                self._apply_control(yaw_error, TARGET_VELOCITY)
+
             return py_trees.common.Status.RUNNING
 
         if self.phase == "ROTATING":
@@ -1055,6 +1029,13 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
         if max_v > MAX_WHEEL_VELOCITY:
             scale = MAX_WHEEL_VELOCITY / max_v
             v_l, v_r = v_l * scale, v_r * scale
+
+        # Prevent slipping during pure rotation
+        if v_target == 0.0:
+            pure_rotation_cap = 2.0  # Limit turning wheel speed to prevent slipping
+            v_l = np.clip(v_l, -pure_rotation_cap, pure_rotation_cap)
+            v_r = np.clip(v_r, -pure_rotation_cap, pure_rotation_cap)
+
         self.robot.set_base_velocity(v_l,v_r)
         
     def _stop_robot(self):
