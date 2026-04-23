@@ -877,6 +877,8 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
         compass = self.webots_robot.getDevice("compass")
         compass.enable(timestep)
 
+        """Configuration is done in the final_controller, we will delete this
+        
         # Initial arm configuration
         initial_pose = {
             'torso_lift_joint': 0.3, 'arm_1_joint': 0.71, 'arm_2_joint': 1.02,
@@ -903,6 +905,7 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
             if all_joints_in_position:
                 print("Arm is in position")
                 break
+        """
 
         print(f"{self.name}: Initializing navigation to {self.target_dict}...")
         self.phase = "PLANNING"

@@ -18,13 +18,13 @@ from behaviours import (
 # Constants/Targets
 TARGETS = {
     "green_basket": {"x": -1.24, "y": 0.48, "heading": math.radians(89.02)},
-    "nocilla": {"x": 0.9, "y": -0.3, "heading": math.radians(0)},
+    "nocilla": {"x": 0.74, "y": -0.15, "heading": math.radians(0)},
     "nutella": {"x": 0.28, "y": -1.63, "heading": math.radians(-137.53)},
     "home": {"x": -0.93, "y": -3.14, "heading": math.radians(1.57)}
 }
 
 starting_position = {
-    'torso_lift_joint': 0.1, 
+    'torso_lift_joint': 0.35, 
     'arm_1_joint': 0.07, 
     'arm_2_joint': 0.7,
     'arm_3_joint': -1.45, 
@@ -37,22 +37,42 @@ starting_position = {
     'head_1_joint': 0, 
     'head_2_joint': -0.5
 }
-
+"""
 planning_position = {
     "torso_lift_joint": 0.35,
-    "arm_1_joint": 0.07,
-    "arm_2_joint": 0.75,
-    "arm_3_joint": -1.75,
-    "arm_4_joint": 0.0,
-    "arm_5_joint": -1.5,
-    "arm_6_joint": 0.0,
-    "arm_7_joint": 0.0
-}
+    "arm_1_joint": 1.20,
+    "arm_2_joint": 1.02,
+    "arm_3_joint": 0.29,
+    "arm_4_joint": 1.12,
+    "arm_5_joint": 1.71,
+    "arm_6_joint": -1.39,
+    "arm_7_joint": 1.53
+}"""
 
 manipulation_position = {
-    "torso_lift_joint": 0.35,  # Suitable height for manipulation
-    "head_2_joint": -0.5       # Look down
+    "torso_lift_joint": 0.35,  
+    "arm_1_joint": 0.94,       
+    "arm_2_joint": 1.02,       
+    "arm_3_joint": -1.06,
+    "arm_4_joint": 1.43,       
+    "arm_5_joint": 1.09,     
+    "arm_6_joint": -1.39,
+    "arm_7_joint": 1.80,
+    "head_2_joint": -0.5       
 }
+
+carrying_position = {
+    "torso_lift_joint": 0.35,  
+    "arm_1_joint": 0.94,       
+    "arm_2_joint": 1.02,       
+    "arm_3_joint": -1.3,
+    "arm_4_joint": 1.50,       
+    "arm_5_joint": 1.09,     
+    "arm_6_joint": -1.39,
+    "arm_7_joint": 1.80,
+    "head_2_joint": -0.5         
+}
+
 
 def create_behavior_tree(robot):
     """Creates the sequence for the pick and place task."""
@@ -77,7 +97,7 @@ def create_behavior_tree(robot):
         # 3. Perception and Planning (Look at the table and find the exact coordinates)
         prep_seq = py_trees.composites.Sequence("Perception & Planning", memory=True)
         prep_seq.add_children([
-            MoveArmJointsForwardKinematics("Move to Planning Position", robot, planning_position),
+            #MoveArmJointsForwardKinematics("Move to Planning Position", robot, planning_position),
             EnhancedObjectRecognizer("Recognize Objects", robot, timeout=60.0),
             ObjectSelector("Select Object", robot)
         ])
@@ -85,7 +105,7 @@ def create_behavior_tree(robot):
         # 4. Pick Sequence (Approach, Grasp, Lift)
         pick_seq = py_trees.composites.Sequence("Pick Sequence", memory=True)
         pick_seq.add_children([
-            MoveArmJointsForwardKinematics("Adjust Height for Manipulation", robot, manipulation_position),
+            MoveArmJointsForwardKinematics("Pose for Manipulation", robot, manipulation_position),
             MoveArmTrajectoryRRT(
                 name="Approach Object",
                 robot=robot,
@@ -93,7 +113,8 @@ def create_behavior_tree(robot):
                 offsets=[[0.0, 0.0, 0.40], [0.0, 0.0, 0.09]]
             ),
             GraspController("Grasp Object", robot),
-            LiftAndVerify("Lift Object", robot)
+            LiftAndVerify("Lift Object", robot),
+            MoveArmJointsForwardKinematics("Move to Carry Position", robot, carrying_position)
         ])
 
         # 5. Navigate to Basket
@@ -102,6 +123,7 @@ def create_behavior_tree(robot):
         # 6. Place Sequence (Drop & Reset)
         place_seq = py_trees.composites.Sequence("Place Sequence", memory=True)
         place_seq.add_children([
+            MoveArmJointsForwardKinematics("Pose for Drop Manipulation", robot, manipulation_position),
             MoveArmTrajectoryRRT(
                 name="Move to Drop Position",
                 robot=robot,

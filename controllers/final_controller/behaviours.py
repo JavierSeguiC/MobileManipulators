@@ -100,7 +100,7 @@ class MoveArmTrajectoryRRT(py_trees.behaviour.Behaviour):
             self.current_path_target_angles = []
             for waypoint in path:
                 target_angles = self.robot.ik_chain.calculate_inverse_kinematics(
-                    waypoint, [0, 0, 0], orientation_mode="Z"
+                    waypoint, [0, 0, 1], orientation_mode="Z"
                 )
                 if not target_angles:
                     print(f"{self.name}: Failed to calculate IK solution for waypoint. Aborting.")
@@ -338,7 +338,8 @@ class ObjectSelector(py_trees.behaviour.Behaviour):
 
             # Z usually stays the same if your robot base is at Z=0, 
             # otherwise subtract the robot's base elevation
-            local_z = target_world_z 
+            arm_base_height = 0  
+            local_z = target_world_z - arm_base_height  
 
             # 5. NOW save the LOCAL coordinates to the blackboard
             local_target = [local_x, local_y, local_z]
@@ -586,7 +587,7 @@ class MoveArmJointsForwardKinematics(py_trees.behaviour.Behaviour):
     Precise joint-space controller for arm positioning using the robot instance.
     """
 
-    def __init__(self, name, robot_instance: TiagoRobot, joint_targets, tolerance=0.02, timeout=10.0):
+    def __init__(self, name, robot_instance: TiagoRobot, joint_targets, tolerance=0.005, timeout=10.0):
         super(MoveArmJointsForwardKinematics, self).__init__(name)
         self.robot = robot_instance
         self.joint_targets = joint_targets
