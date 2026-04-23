@@ -17,12 +17,27 @@ from behaviours import (
 
 # Constants/Targets
 TARGETS = {
-    "green_basket": {"x": -1.24, "y": 0.48, "heading": math.radians(89.02)},
+    "green_basket": {"x": -1.12, "y": 0.42, "heading": math.radians(89.02)},
     "nocilla": {"x": 0.74, "y": -0.15, "heading": math.radians(0)},
     "nutella": {"x": 0.28, "y": -1.63, "heading": math.radians(-137.53)},
     "home": {"x": -0.93, "y": -3.14, "heading": math.radians(1.57)}
 }
 
+starting_position = {
+    'torso_lift_joint': 0.35, 
+    'arm_1_joint': 0.71, 
+    'arm_2_joint': 1.02,
+    'arm_3_joint': -2.815, 
+    'arm_4_joint': 1.011, 
+    'arm_5_joint': 0,
+    'arm_6_joint': 0, 
+    'arm_7_joint': 0,
+    'gripper_left_finger_joint': 0.045, 
+    'gripper_right_finger_joint': 0.045,
+    'head_1_joint': 0, 
+    'head_2_joint': 0
+}
+"""
 starting_position = {
     'torso_lift_joint': 0.35, 
     'arm_1_joint': 0.07, 
@@ -37,6 +52,7 @@ starting_position = {
     'head_1_joint': 0, 
     'head_2_joint': -0.5
 }
+"""
 """
 planning_position = {
     "torso_lift_joint": 0.35,
@@ -124,6 +140,11 @@ def create_behavior_tree(robot):
         place_seq = py_trees.composites.Sequence("Place Sequence", memory=True)
         place_seq.add_children([
             MoveArmJointsForwardKinematics("Pose for Drop Manipulation", robot, manipulation_position),
+            
+            OpenGripper("Drop Object", robot),
+            MoveArmJointsForwardKinematics("Return Arm to Safe Pos", robot, starting_position)
+        ])
+        """ Removed from place sequence
             MoveArmTrajectoryRRT(
                 name="Move to Drop Position",
                 robot=robot,
@@ -131,10 +152,7 @@ def create_behavior_tree(robot):
                 fixed_target=[0.79, 0.0, 1.15], # Drop coordinates over basket
                 offsets=[[0.0, 0.0, 0.0]]
             ),
-            OpenGripper("Drop Object", robot),
-            MoveArmJointsForwardKinematics("Return Arm to Safe Pos", robot, starting_position)
-        ])
-
+        """
         # Assemble the full sequence for this object
         obj_seq.add_children([go_to_object, prep_seq, pick_seq, go_to_basket, place_seq])
         root.add_child(obj_seq)

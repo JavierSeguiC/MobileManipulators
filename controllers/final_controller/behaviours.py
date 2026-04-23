@@ -501,17 +501,24 @@ class OpenGripper(py_trees.behaviour.Behaviour):
 
 class LiftAndVerify(py_trees.behaviour.Behaviour):
 
-    def __init__(self, name: str, robot_instance: TiagoRobot, timeout=2.0):
+    def __init__(self, name: str, robot_instance: TiagoRobot, lift_height=0.20, tolerance=0.02, timeout=20.0):
         super(LiftAndVerify, self).__init__(name)
         self.robot = robot_instance
         self.timeout = timeout
+        self.lift_height = lift_height  # Adjustable lift height
+        self.tolerance = tolerance
 
         self.start_time = None
-        self.movement_started = False
+        self.movement_complete = False
+
+        self.current_path_target_angles = None
+        self.current_waypoint_index = 0
 
     def initialise(self):
         self.start_time = self.robot.get_time()
-        self.movement_started = False
+        self.movement_complete = False
+        self.current_path_target_angles = None
+        self.current_waypoint_index = 0
         print(f"{self.name}: Starting lift sequence")
 
         # Keep the base stationary during the lift
@@ -528,29 +535,44 @@ class LiftAndVerify(py_trees.behaviour.Behaviour):
             blackboard = py_trees.blackboard.Blackboard()
             blackboard.set("grasp_success", False)
             return py_trees.common.Status.FAILURE
+        
+        # timeout check
+        if current_time - self.start_time > self.timeout:
+            print(f"{self.name}: Lift sequence timed out after {self.timeout}s")
+            return py_trees.common.Status.FAILURE
+        
+        # completion check
+        if self.movement_complete:
+            print(f"{self.name}: Object securely held and lifted!")
+            return py_trees.common.Status.SUCCESS
 
-        # Start the lift movement if not started yet
-        if not self.movement_started:
+        # ==========================================
+        # STEP 1: PATH PLANNING (Runs ONCE)
+        # ==========================================
+        if self.current_path_target_angles is None:
             
             # Offset lift from grasp position
-            offset_lift = np.array([0.00, 0.0, 0.25]) # CHANGE THIS OFFSET TO ADJUST LIFT HEIGHT
+            offset_lift = np.array([0.00, 0.0, self.lift_height]) 
             
             # Read current end-effector position
             current_grasp = self.robot.read_torso_and_arm_joints()
             prelift_position = self.robot.ik_chain.calculate_forward_kinematics(current_grasp)
             
-            # Add a small step to ensure we start the lift from a stable position
-            self.robot.step(200)
-            
+            print(f"{self.name}: Planning RRT for lift trajectory...")
             path_lift = self.robot.planner.run_rrt_with_obstacles(
                 x_init=tuple(prelift_position), 
                 x_goal=tuple(prelift_position + offset_lift),
                 headless = True
             )
 
+            # check for failure in path planning
+            if not path_lift:
+                print(f"{self.name}: RRT Planner failed to find a lift path.")
+                return py_trees.common.Status.FAILURE
+
+            self.current_path_target_angles = []
             for waypoint in path_lift:
                 
-                # Convert to configuration space using IK
                 self.target_angles = self.robot.ik_chain.calculate_inverse_kinematics(
                     waypoint, [0, 0, 1], orientation_mode="Z"
                 )
@@ -558,27 +580,40 @@ class LiftAndVerify(py_trees.behaviour.Behaviour):
                 if not self.target_angles:
                     print(f"{self.name}: Failed to calculate IK solution.")
                     return py_trees.common.Status.FAILURE
+                
+                self.current_path_target_angles.append(self.target_angles)
 
-                # Move arm joints to the new position using the robot instance
-                for joint, angle in self.target_angles.items():
-                    self.robot.set_joint_position(joint, angle)
-                        
-                self.robot.step(200)  # Allow some time for movement
+            self.current_waypoint_index = 0
 
-            self.movement_started = True
-            print(f"{self.name}: Arm moving to lift position")
+            return py_trees.common.Status.RUNNING
 
-        # Check for timeout - consider motion complete after timeout
-        if current_time - self.start_time > self.timeout:
-            print(f"{self.name}: Lift sequence completed")
+        # ==========================================
+        # STEP 2: PATH EXECUTION (Runs EVERY TICK)
+        # ==========================================
+        
+        target_angles = self.current_path_target_angles[self.current_waypoint_index]
 
-            if self.robot.magnet.isLocked():
-                print(f"{self.name}: Object securely held!")
-                return py_trees.common.Status.SUCCESS
-            else:
-                print(f"{self.name}: Object lost during final lift position")
-                return py_trees.common.Status.FAILURE
+        for joint, angle in target_angles.items():
+            self.robot.set_joint_position(joint, angle)
 
+        all_in_place = True
+        for joint, target_angle in target_angles.items():
+            current_angle = self.robot.get_joint_position(joint)
+            
+            if abs(target_angle - current_angle) > self.tolerance:
+                all_in_place = False
+                break
+
+        # If the arm has reached the current waypoint...
+        if all_in_place:
+            self.current_waypoint_index += 1
+            
+            # Check if we have finished all waypoints for the lift
+            if self.current_waypoint_index >= len(self.current_path_target_angles):
+                print(f"{self.name}: Lift movement completed physically.")
+                self.movement_complete = True
+                
+        # The robot is still moving towards a waypoint
         return py_trees.common.Status.RUNNING
 
 
@@ -877,6 +912,8 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
         compass = self.webots_robot.getDevice("compass")
         compass.enable(timestep)
 
+        """Configuration is done in the final_controller, we will delete this
+        
         # Initial arm configuration
         initial_pose = {
             'torso_lift_joint': 0.3, 'arm_1_joint': 0.71, 'arm_2_joint': 1.02,
@@ -903,6 +940,7 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
             if all_joints_in_position:
                 print("Arm is in position")
                 break
+        """
 
         print(f"{self.name}: Initializing navigation to {self.target_dict}...")
         self.phase = "PLANNING"
