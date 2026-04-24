@@ -8,5 +8,5 @@ orthographicViewHeight: 1
 textFiles: -1
 consoles: Console:All:All
 renderingDevicePerspectives: tiago:Astra depth;0;1;0;0
-renderingDevicePerspectives: tiago:Astra rgb;0;0.442188;0;0
-renderingDevicePerspectives: tiago:map_display;1;1;0;0
+renderingDevicePerspectives: tiago:Astra rgb;1;0.442188;0;0
+renderingDevicePerspectives: tiago:map_display;0;1;0;0

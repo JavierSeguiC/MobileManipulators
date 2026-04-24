@@ -501,7 +501,7 @@ class OpenGripper(py_trees.behaviour.Behaviour):
 
 class LiftAndVerify(py_trees.behaviour.Behaviour):
 
-    def __init__(self, name: str, robot_instance: TiagoRobot, lift_height=0.20, tolerance=0.02, timeout=20.0):
+    def __init__(self, name: str, robot_instance: TiagoRobot, lift_height=0.20, tolerance=0.02, timeout=60.0):
         super(LiftAndVerify, self).__init__(name)
         self.robot = robot_instance
         self.timeout = timeout
@@ -935,7 +935,7 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
         map_.type_map[:, :] = TYPES.FREE
         map_.type_map[img < 128] = TYPES.OBSTACLE
 
-        inflate_radius_m = 0.35
+        inflate_radius_m = 0.40
         inflate_radius_px = int(np.ceil(inflate_radius_m / MAP_RESOLUTION))
         map_.inflate_obstacles(radius=inflate_radius_px)
         print(f"Obstacles inflated by {inflate_radius_px} pixels.")
@@ -1032,7 +1032,7 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
 
         # Prevent slipping during pure rotation
         if v_target == 0.0:
-            pure_rotation_cap = 2.0  # Limit turning wheel speed to prevent slipping
+            pure_rotation_cap = 5.0  # Limit turning wheel speed to prevent slipping
             v_l = np.clip(v_l, -pure_rotation_cap, pure_rotation_cap)
             v_r = np.clip(v_r, -pure_rotation_cap, pure_rotation_cap)
 
