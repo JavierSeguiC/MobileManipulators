@@ -36,13 +36,13 @@ class MoveArmTrajectoryRRT(py_trees.behaviour.Behaviour):
         self.current_phase = 0
         self.blackboard = py_trees.blackboard.Blackboard()
 
-    def initialise(self): #changes to this function
+    def initialise(self): # added variables to original function
         # Reset variables for a new execution
         self.movement_complete = False
         self.start_time = self.robot.get_time()
         self.current_phase = 0
         
-        # --- NEW: State variables for non-blocking execution ---
+        # NEW: State variables for non-blocking execution
         # Stores the pre-calculated IK angles for the current path
         self.current_path_target_angles = None 
         # Tracks which waypoint the arm is currently moving towards
@@ -60,9 +60,8 @@ class MoveArmTrajectoryRRT(py_trees.behaviour.Behaviour):
             print(f"{self.name}: Timed out after {self.timeout} seconds.")
             return py_trees.common.Status.FAILURE
 
-        # ==========================================
         # STEP 1: PATH PLANNING (Runs ONCE per Phase)
-        # ==========================================
+        
         if self.current_path_target_angles is None:
             base_target = None
             if self.use_target_from_blackboard:
@@ -96,11 +95,11 @@ class MoveArmTrajectoryRRT(py_trees.behaviour.Behaviour):
                 print(f"{self.name}: RRT Planner failed to find a path.")
                 return py_trees.common.Status.FAILURE
 
-            # Calculate IK for the ENTIRE path right now, and store it.
+            # Calculate IK for the entire path now, and store it.
             self.current_path_target_angles = []
             for waypoint in path:
                 target_angles = self.robot.ik_chain.calculate_inverse_kinematics(
-                    waypoint, [0, 0, 1], orientation_mode="Z"
+                    waypoint, [0, 0, 1], orientation_mode="Z" #reaching the object from above
                 )
                 if not target_angles:
                     print(f"{self.name}: Failed to calculate IK solution for waypoint. Aborting.")
@@ -110,14 +109,10 @@ class MoveArmTrajectoryRRT(py_trees.behaviour.Behaviour):
             
             self.current_waypoint_index = 0 # Start at the first waypoint
             
-            # Yield control back to Webots so the simulation can step!
             return py_trees.common.Status.RUNNING 
 
-
-        # ==========================================
-        # STEP 2: PATH EXECUTION (Runs EVERY TICK)
-        # ==========================================
-        
+        # STEP 2: PATH EXECUTION (After step 1 is ran ONCE, this runs EVERY TICK)
+          
         # Grab the target angles for the specific waypoint we are currently trying to reach
         target_angles = self.current_path_target_angles[self.current_waypoint_index]
         
@@ -143,7 +138,7 @@ class MoveArmTrajectoryRRT(py_trees.behaviour.Behaviour):
             if self.current_waypoint_index >= len(self.current_path_target_angles):
                 print(f"{self.name}: Reached phase {self.current_phase + 1} target.")
                 
-                # Advance to the next phase (e.g., from pre-grasp to grasp)
+                # Advance to the next phase
                 self.current_phase += 1
                 
                 # Clear the path so the RRT plans a new one on the next tick
@@ -192,7 +187,7 @@ class EnhancedObjectRecognizer(py_trees.behaviour.Behaviour):
         
         print(f"{self.name}: Iniciando barrido de cabeza...")
         
-        # Initial head position and speed setup using the robot instance
+        # Making sure initial head position is correct for scanning
         self.robot.set_joint_position('torso_lift_joint', 0.35)
         self.robot.set_joint_position('head_2_joint', -0.5) 
         self.robot.step(50) # Allow time for head to move
@@ -294,7 +289,6 @@ class ObjectSelector(py_trees.behaviour.Behaviour):
         self.target_position = None
 
     def initialise(self):
-        
         # Reset variables at the start of the behavior
         self.object_name = None
         self.target_position = None
@@ -307,6 +301,8 @@ class ObjectSelector(py_trees.behaviour.Behaviour):
         
         # Verify if the list exists and has at least one object
         if filtered_objs and len(filtered_objs) > 0:
+
+            # FIX TO THE 90º GRASPING OFFSET ISSUE, WE RECALCULATE THE COORDINATE TRANSFORMATION, there must be a better way to do this but it works
             
             # Extract position and name of the first object in the list
             self.target_position = filtered_objs[0][0]
@@ -323,7 +319,7 @@ class ObjectSelector(py_trees.behaviour.Behaviour):
             # Get yaw (0 is East, 90 is North in standard Webots ENU)
             yaw = math.atan2(compass_vec[0], compass_vec[1]) 
 
-            # 2. Get your object's global target position (assuming you have this)
+            # 2. Get object's global target position
             target_world_x = filtered_objs[0][0][0]  
             target_world_y = filtered_objs[0][0][1]  
             target_world_z = filtered_objs[0][0][2]  
@@ -546,9 +542,8 @@ class LiftAndVerify(py_trees.behaviour.Behaviour):
             print(f"{self.name}: Object securely held and lifted!")
             return py_trees.common.Status.SUCCESS
 
-        # ==========================================
-        # STEP 1: PATH PLANNING (Runs ONCE)
-        # ==========================================
+        # STEP 1: PATH PLANNING (Runs ONCE) same logic as MoverArmTrajectoryRRT
+
         if self.current_path_target_angles is None:
             
             # Offset lift from grasp position
@@ -587,9 +582,7 @@ class LiftAndVerify(py_trees.behaviour.Behaviour):
 
             return py_trees.common.Status.RUNNING
 
-        # ==========================================
         # STEP 2: PATH EXECUTION (Runs EVERY TICK)
-        # ==========================================
         
         target_angles = self.current_path_target_angles[self.current_waypoint_index]
 
@@ -892,8 +885,6 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
 
     def initialise(self):
         print("Initializing robot and devices...")
-        # self.robot is of the TiagoRobot custom class
-        # webots_robot is of the Robot class (from Webots), and we use it to access devices
         
         timestep = int(self.robot.timestep)
 
@@ -929,7 +920,7 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
         height, width = img.shape
         print(f"Map loaded: {width}x{height}px | res={MAP_RESOLUTION} m/px | origin={MAP_ORIGIN}")
         
-        #using logic from path planning, inflate radius reduced 0.5 -> 0.45
+        #using logic from path planning, inflate radius reduced 0.5 -> 0.40
         print("Inflating grid map...")
         map_ = Grid(bounds=[[0, width], [0, height]])
         map_.type_map[:, :] = TYPES.FREE
@@ -1030,7 +1021,7 @@ class NavigationWithRRT(py_trees.behaviour.Behaviour):
             scale = MAX_WHEEL_VELOCITY / max_v
             v_l, v_r = v_l * scale, v_r * scale
 
-        # Prevent slipping during pure rotation
+        # Prevent slipping during pure rotation by clipping velocity
         if v_target == 0.0:
             pure_rotation_cap = 5.0  # Limit turning wheel speed to prevent slipping
             v_l = np.clip(v_l, -pure_rotation_cap, pure_rotation_cap)

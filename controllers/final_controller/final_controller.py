@@ -91,10 +91,10 @@ carrying_position = {
 
 
 def create_behavior_tree(robot):
-    """Creates the sequence for the pick and place task."""
+    # Creates the sequence for the pick and place task.
     root = py_trees.composites.Sequence("Pick and Place Sequence", memory=True)
 
-    # 1. Initialization
+    # Initialization
     init_seq = py_trees.composites.Sequence("Initialization", memory=True)
     init_seq.add_children([
         CheckHardwareStatus("Check Hardware", robot),
@@ -107,18 +107,17 @@ def create_behavior_tree(robot):
     for obj_name in objects_to_pick:    #iterate thru the list of objects to pick and place
         obj_seq = py_trees.composites.Sequence(f"Process {obj_name.capitalize()}", memory=True)
 
-        # 2. Navigate to the object location
+        # 1. Navigate to the object location
         go_to_object = NavigationWithRRT(f"Navigate to {obj_name.capitalize()}", robot, TARGETS[obj_name])
         
-        # 3. Perception and Planning (Look at the table and find the exact coordinates)
+        # 2. Perception and Planning (Look at the table and find the exact coordinates)
         prep_seq = py_trees.composites.Sequence("Perception & Planning", memory=True)
         prep_seq.add_children([
-            #MoveArmJointsForwardKinematics("Move to Planning Position", robot, planning_position),
             EnhancedObjectRecognizer("Recognize Objects", robot, timeout=60.0),
             ObjectSelector("Select Object", robot)
         ])
 
-        # 4. Pick Sequence (Approach, Grasp, Lift)
+        # 3. Pick Sequence (Approach, Grasp, Lift)
         pick_seq = py_trees.composites.Sequence("Pick Sequence", memory=True)
         pick_seq.add_children([
             MoveArmJointsForwardKinematics("Pose for Manipulation", robot, manipulation_position),
@@ -133,10 +132,10 @@ def create_behavior_tree(robot):
             MoveArmJointsForwardKinematics("Move to Carry Position", robot, carrying_position)
         ])
 
-        # 5. Navigate to Basket
+        # 4. Navigate to Basket
         go_to_basket = NavigationWithRRT("Navigate to Basket", robot, TARGETS["green_basket"])
 
-        # 6. Place Sequence (Drop & Reset)
+        # 5. Place Sequence (Drop & Reset)
         place_seq = py_trees.composites.Sequence("Place Sequence", memory=True)
         place_seq.add_children([
             MoveArmJointsForwardKinematics("Pose for Drop Manipulation", robot, manipulation_position),
@@ -144,21 +143,12 @@ def create_behavior_tree(robot):
             OpenGripper("Drop Object", robot),
             MoveArmJointsForwardKinematics("Return Arm to Safe Pos", robot, starting_position)
         ])
-        """ 
-        Removed from place sequence
-            MoveArmTrajectoryRRT(
-                name="Move to Drop Position",
-                robot=robot,
-                use_target_from_blackboard=False,
-                fixed_target=[0.79, 0.0, 1.15], # Drop coordinates over basket
-                offsets=[[0.0, 0.0, 0.0]]
-            ),
-        """
-        # Assemble the full sequence for this object
+        
+        # 6. Assemble the full sequence for this object
         obj_seq.add_children([go_to_object, prep_seq, pick_seq, go_to_basket, place_seq])
         root.add_child(obj_seq)
 
-    # 7. Return Home
+    # Return Home
     go_home = NavigationWithRRT("Return Home", robot, TARGETS["home"])
     root.add_child(go_home)
 
@@ -191,7 +181,7 @@ def main():
         
         current_time = robot.get_time()
 
-        # Optional: Print tree status every few seconds for debugging
+        # Debugging, Print tree status every few seconds for debugging
         if current_time - last_print_time >= print_interval:
             print("\n" + "="*40)
             print(f"Behavior Tree Status at {current_time:.1f}s:")
